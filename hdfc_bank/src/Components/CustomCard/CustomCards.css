@@ -1,0 +1,29 @@
+.parent-container {
+  display: flex;
+  gap: 15px;
+  margin-top: 52px;
+  justify-content: center;
+}
+
+.previous {
+  border-radius: 24px;
+  background: blue;
+  border: none;
+}
+
+.next {
+  border-radius: 24px;
+  background: blue;
+  border: none;
+}
+
+img {
+  width: 100px !important;
+}
+
+.bg-wrapper {
+  background-image: url("https://imgs.search.brave.com/K89Fxlpz08yVQzFo7MifN0a6Cbt6w8yyjKkZrM7KsRM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jOC5h/bGFteS5jb20vY29t/cC9EQjBSRU0vYXBw/bGUtY2VvLXN0ZXZl/LWpvYnMtaXMtcGlj/dHVyZWQtZHVyaW5n/LXRoZS1wcmVzZW50/YXRpb24tb2YtdGhl/LWlwaG9uZS1EQjBS/RU0uanBn");
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+}
