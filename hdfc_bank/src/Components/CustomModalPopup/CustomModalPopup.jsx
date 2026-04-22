@@ -47,7 +47,7 @@ export default function CustomModalPopup() {
           horizontal: "left",
         }}
         transformOrigin={{
-          vertical: "top",
+          vertical: "right",
           horizontal: "left",
         }}
       >
