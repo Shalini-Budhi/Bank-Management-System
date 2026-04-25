@@ -11,6 +11,7 @@ import CustomCard from "./Components/CustomCard/CustomCard";
 import ExploreAllHdfcBank from "./Components/ExploreAllHdfcBank/ExploreAllHdfcBank";
 import SimplyFinanance from "./Components/SimplyFinanance/SimplyFinanance";
 import Login from "./Components/Login/Login";
+import Dashboard from "./Components/Dashboard/Dashboard";
 
 function App() {
   const navigate = useNavigate();
@@ -20,17 +21,19 @@ function App() {
   return (
     <>
       {location.pathname === "/login" ? (
-        <Routes>
-          <Route path="/" element={<CustomTabs />} />
-          <Route path="/cards" element={<CustomCard />} />
-          <Route path="/explore" element={<ExploreAllHdfcBank />} />
-          <Route path="/finance" element={<SimplyFinanance />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
+        <Login />
       ) : (
         <>
           <NavBar />
-          <CustomCard />
+
+          <Routes>
+            <Route path="/" element={<CustomTabs />} />
+            <Route path="/cards" element={<CustomCard />} />
+            <Route path="/explore" element={<ExploreAllHdfcBank />} />
+            <Route path="/finance" element={<SimplyFinanance />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
         </>
       )}
     </>

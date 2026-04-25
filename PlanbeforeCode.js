@@ -68,3 +68,55 @@
 // CustomerID:String | Number,
 // Password: Number | String
 // }
+
+
+// user
+
+// username : "vshiva967"
+// password :testing@123
+
+
+// login------ frontend api --- /login  ------------- BE ------ req.body.username && req.body.password
+
+// database lo findOne() ----- if user 
+
+// bcrypt password 
+
+
+// login end point 
+
+// Response.json("lgin succ", username)
+
+
+server 
+
+
+express 
+data format json parse 
+
+.json()
+
+db conect 
+
+
+
+express.use(cors() json())
+
+
+
+app.post('/login', (req, res)=>{
+    const {userName, pasword} = req.body;
+
+
+    Schema ? loginForm 
+
+   const isFound =  loginForm.findOne({userName})
+
+   return "user is found";
+
+   !isFound return "user is not found"
+
+
+   res.json("user logged on succfuly ")
+
+} )
