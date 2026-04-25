@@ -11,28 +11,32 @@ import CustomCard from "./Components/CustomCard/CustomCard";
 import ExploreAllHdfcBank from "./Components/ExploreAllHdfcBank/ExploreAllHdfcBank";
 import SimplyFinanance from "./Components/SimplyFinanance/SimplyFinanance";
 import Login from "./Components/Login/Login";
+import HomeTabDashboard from "./Components/HomeTabComponents/HomeTabDashboard/HomeTabDashboard";
+
 
 function App() {
-  const navigate = useNavigate();
   const location = useLocation();
   console.log(location, "location");
 
   return (
     <>
-      {location.pathname === "/login" ? (
+      {/* {location.pathname === "/login" ? (
         <Routes>
-          <Route path="/" element={<CustomTabs />} />
-          <Route path="/cards" element={<CustomCard />} />
-          <Route path="/explore" element={<ExploreAllHdfcBank />} />
-          <Route path="/finance" element={<SimplyFinanance />} />
-          <Route path="/login" element={<Login />} />
+        <Route path="/cards" element={<CustomCard />} />
+        <Route path="/explore" element={<ExploreAllHdfcBank />} />
+        <Route path="/finance" element={<SimplyFinanance />} />
+        <Route path="/login" element={<Login />} />
         </Routes>
-      ) : (
-        <>
+        ) : (
+          <>
           <NavBar />
           <CustomCard />
-        </>
-      )}
+          </>
+          )} */}
+        <Routes>
+          {/* <Route path="/" element={<CustomTabs />} /> */}
+          <Route path="/retail-app/dashboard" element={<HomeTabDashboard />} />
+        </Routes>
     </>
   );
 }

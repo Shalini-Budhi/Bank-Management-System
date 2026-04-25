@@ -1,0 +1,15 @@
+.userName_flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.tabs_favourite_grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.favourite_grid_data a {
+  text-decoration: none;
+
+}

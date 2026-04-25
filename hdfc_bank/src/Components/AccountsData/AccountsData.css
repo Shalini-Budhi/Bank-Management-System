@@ -1,0 +1,8 @@
+.img-arrow-flex{
+  display: flex;
+  justify-content: space-between;
+}
+
+.account_data_description{
+  margin-bottom: 8% !important;
+}
