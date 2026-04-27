@@ -7,67 +7,58 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import CustomTabs from "../CustomTabs/CustomTabs";
+import CustomTabsUi from "../ui/CustomTabsUi";
+import Accounts from "../Accounts/Accounts";
+import CardsData from "../CardsData/CardsData";
+import HomeData from "../HomeData/HomeData";
 
 export default function Home() {
-  const cardsData = [
-    {
-      productName: "Don’t let your personal loan offer get away",
-      applyNow: "applyNow",
-    },
 
+  const tabsData = [
     {
-      productName: "Ride in Style with our Two-Wheeler Loan",
-      applyNow: "applyNow",
+      name: "Home",
+      component: <HomeData />,
     },
     {
-      productName: "Discover Your Loan Options",
-      applyNow: "Explore All Loans",
+      name: "Accounts",
+      component: <Accounts />,
+    },
+    {
+      name: "Send Money",
+      component: "HomeData Tabs",
+    },
+    {
+      name: <CardsData />,
+      component: "HomeData Tabs",
+    },
+    {
+      name: "FD/RD",
+      component: "HomeData Tabs",
+    },
+    {
+      name: "Bills & Recharge",
+      component: "HomeData Tabs",
+    },
+    {
+      name: "Loans",
+      component: "HomeData Tabs",
+    },
+    {
+      name: "Invest",
+      component: "Invest",
+    },
+    {
+      name: "Insure",
+      component: "Insure",
     },
   ];
+
   return (
     <>
       <div className="container-fluid">
-        <CustomTabs />
-        <div>
-          Home Welcome, v siva kumar Last logged in at 25/04/26, 10:12 am
-        </div>
-        {/* layout ? 6 items ? buttons */}
-        <div className="flex-container">
-          <button className="homeBtn">Accounts</button>
-          <button className="homeBtn">Cards</button>
-          <button className="homeBtn">FD/RD</button>
-          <button className="homeBtn">Loans</button>
-          <button className="homeBtn">Invest</button>
-          <button className="homeBtn">Accinsureounts</button>
-
-          {/* Layput ? grid  3 items gap 10px */}
-        </div>
-        <div className="card-container">
-          {cardsData.map((ele) => {
-            return (
-              <>
-                <Card variant="outlined">
-                  <CardContent>
-                    <Typography
-                      gutterBottom
-                      sx={{ color: "text.secondary", fontSize: 14 }}
-                    >
-                      {ele.productName}
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button> {ele.applyNow}</Button>
-                  </CardActions>
-                </Card>
-              </>
-            );
-          })}
-        </div>
+        <CustomTabsUi tabs={tabsData} />
       </div>
     </>
   );
 }
 
-// 3 cards
-
-// 3 arrays [0]1 2

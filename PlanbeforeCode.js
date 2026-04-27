@@ -182,8 +182,14 @@
 
 // Accounts 
 
-1. Accounts Heading 
+// 1. Accounts Heading 
 
-2. main div divide into 2 divs (1 col-8 and 2 one for Links(col-4))
+// 2. main div divide into 2 divs (1 col-8 and 2 one for Links(col-4))
  
-3. main Content(a p tag(total balance amount ),h4(balance from backend) )
+// 3. main Content(a p tag(total balance amount ),h4(balance from backend) )
+
+// 4.  one main Card a main div(take 3 divs again )
+
+// 5. all cards are same height and width so use flex and direction column 
+
+// 6. create one custom card and reuse that card for different cards 
