@@ -11,9 +11,13 @@ import CustomTabsUi from "../ui/CustomTabsUi";
 import Accounts from "../Accounts/Accounts";
 import CardsData from "../CardsData/CardsData";
 import HomeData from "../HomeData/HomeData";
+import SendMoney from "../SendMoney/SendMoney";
+import Bills_Recharge from "../Bills_Recharge/Bills_Recharge";
+import Loans from "../Loans/Loans";
+import Invest from "../Invest/Invest";
+import Insure from "../Insure/Insure";
 
 export default function Home() {
-
   const tabsData = [
     {
       name: "Home",
@@ -25,7 +29,7 @@ export default function Home() {
     },
     {
       name: "Send Money",
-      component: "HomeData Tabs",
+      component: <SendMoney />,
     },
     {
       name: <CardsData />,
@@ -37,19 +41,19 @@ export default function Home() {
     },
     {
       name: "Bills & Recharge",
-      component: "HomeData Tabs",
+      component: <Bills_Recharge />,
     },
     {
       name: "Loans",
-      component: "HomeData Tabs",
+      component: <Loans />,
     },
     {
       name: "Invest",
-      component: "Invest",
+      component: <Invest />,
     },
     {
       name: "Insure",
-      component: "Insure",
+      component: <Insure />,
     },
   ];
 
@@ -61,4 +65,3 @@ export default function Home() {
     </>
   );
 }
-
