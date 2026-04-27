@@ -43,7 +43,7 @@ export default function NetBankingLoginForm() {
   }
   return (
     <>
-      <div className="flex-container">
+      <div className="login-flex-container">
         NetBankingLoginForm
         <input
           type="text"

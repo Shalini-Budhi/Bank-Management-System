@@ -38,12 +38,47 @@ export default function CustomTabs() {
   const [value, setValue] = React.useState(0);
   const TrendingCardData = "LOAN ON CREDIT CARD ";
   const AccountsCardData = "Savings Account";
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
+  const data = [
+    {
+      label: "Home",
+    },
+    {
+      label: "Accounts",
+    },
+    {
+      label: "Send Money",
+    },
+    {
+      label: "Cards",
+    },
+    {
+      label: "FD/RD",
+    },
+    {
+      label: "Bills and Rechargs",
+    },
+    {
+      label: "Loans",
+    },
+    {
+      label: "invest",
+    },
+    {
+      label: "insure",
+    },
+  ];
 
-
+  function displayTabs() {
+    return data.map((ele, index) => {
+      console.log("indedhfjkdhf", index);
+      return <Tab label={ele.label} {...a11yProps({ index })} />;
+    });
+  }
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -53,28 +88,24 @@ export default function CustomTabs() {
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <Tab label="Trending" {...a11yProps(0)} />
-          <Tab label="Accounts" {...a11yProps(1)} />
-          <Tab label="Deposits" {...a11yProps(2)} />
-          <Tab label="Cards" {...a11yProps(3)} />
-          <Tab label="Loans" {...a11yProps(4)} />
-          <Tab label="Insurance" {...a11yProps(5)} />
-          <Tab label="Investments" {...a11yProps(6)} />
+          {displayTabs()}
         </Tabs>
       </Box>
-      <CustomTabPanel value={value} index={0}>
-        <CustomCard
-          value={value}
-          label="Trending"
-          data={TrendingCardData}
-        />
-      </CustomTabPanel>
+
+      {data.map((ele, index) => {
+        return (
+          <CustomTabPanel value={value} index={index}>
+            <CustomCard
+              value={value}
+              label={ele.label}
+              data={TrendingCardData}
+            />
+          </CustomTabPanel>
+        );
+      })}
+
       <CustomTabPanel value={value} index={1}>
-        <CustomCard
-          value={value}
-          label="Accounts"
-          data={AccountsCardData}
-        />
+        <CustomCard value={value} label="Accounts" data={AccountsCardData} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
         <CustomCard value={value} label="Deposits" />
@@ -91,10 +122,6 @@ export default function CustomTabs() {
       <CustomTabPanel value={value} index={6}>
         <CustomCard value={value} label="Investments" />
       </CustomTabPanel>
-
-      
     </Box>
   );
 }
-
-// CustomTabs --- data send chestunam -- CustomCard
