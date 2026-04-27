@@ -1,0 +1,17 @@
+.account_grid_data{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.quickLink_img_icon{
+  margin-right: 10px;
+}
+
+
+.quickLink_name{
+  width: 50px;
+}
+
+/* .arrow_forward_icon{
+  margin-left: 30px;
+} */

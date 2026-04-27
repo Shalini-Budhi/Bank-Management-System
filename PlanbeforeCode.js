@@ -149,24 +149,41 @@
 
 
 
-Tabs section component
+// Tabs section component
 
-Home ---- Home.jsx
-Accounts ---- Accounts.jsx
-Send MOney ---- SendMoney.jsx
+// Home ---- Home.jsx
+// Accounts ---- Accounts.jsx
+// Send MOney ---- SendMoney.jsx
 
-Cards --- Dropdown ---Cards.jsx
-                    Debit Cards
-                    Forex cards
-                    Prepaid Cards
+// Cards --- Dropdown ---Cards.jsx
+//                     Debit Cards
+//                     Forex cards
+//                     Prepaid Cards
 
-FD/RD --- Dropdown ---FIXED DEPOSIT.jsx
-                      Recurrring Deposit
-                      Flexi RD
-
-
-
-                      TABS Home A
+// FD/RD --- Dropdown ---FIXED DEPOSIT.jsx
+//                       Recurrring Deposit
+//                       Flexi RD
 
 
-                      REUSBALE TABS 
+
+//                       TABS Home A
+
+
+//                       REUSBALE TABS 
+
+
+
+// Quick Links Resuable UI
+
+// left side col-4
+
+// links tags with display flex and direction column and a last text
+
+
+// Accounts 
+
+1. Accounts Heading 
+
+2. main div divide into 2 divs (1 col-8 and 2 one for Links(col-4))
+ 
+3. main Content(a p tag(total balance amount ),h4(balance from backend) )
