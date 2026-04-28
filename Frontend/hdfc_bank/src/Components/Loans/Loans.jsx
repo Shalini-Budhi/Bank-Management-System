@@ -166,7 +166,7 @@ export default function Loans() {
      
        <div className="loan-content container">
     
-  
+
       <div className="loan-container ">
         <div className="row g-4">
           <div className="col-8">
