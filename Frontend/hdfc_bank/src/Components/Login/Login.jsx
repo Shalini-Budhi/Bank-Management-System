@@ -63,7 +63,7 @@ export default function Login() {
     <>
       <div className="row">
         <div className="col-md-6">
-          <img src={hdfcProductImage} style={{ width: "828px" }} />
+          <img src={hdfcProductImage} style={{ width: "600px" }} />
         </div>
 
         <div className="col-md-6">
