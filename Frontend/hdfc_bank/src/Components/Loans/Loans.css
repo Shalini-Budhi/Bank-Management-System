@@ -1,0 +1,88 @@
+/* #062441
+#724b05 */
+.loan-header {
+  background: linear-gradient(90deg, #062441, #724b05);
+  color: white;
+  padding: 50px;
+  position: relative;
+  margin-top: 0px;
+}
+.loan-content {
+  margin-top: -60px;
+}
+.loans-apply {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+ 
+}
+.loan-apply-btn {
+  background-color: #1b3fc9;
+  padding: 5px 10px;
+
+  border-radius: 7px;
+  color: white;
+  border: none;
+}
+
+.active-closed-container {
+  display: flex;
+  gap: 20px;
+  border-bottom: 3px solid #eee;
+}
+.activeAndClosedloan-button {
+  border: none;
+  background-color: #fff;
+}
+
+.activeAndClosedloan-button.active {
+  border-bottom: 2px solid blue;
+  color: #1b3fc9;
+}
+.active-loan-card {
+  border-radius: 12px;
+  margin-top: 20px;
+  border: 1px solid #eee;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+.active-loan-card-btn-container {
+  display: flex;
+  gap: 20px;
+}
+.active-loan-apply-btn {
+  padding: 5px 25px;
+  background-color: #fff;
+  border-radius: 7px;
+  color: #1b3fc9;
+  border: 2px solid #1b3fc9;
+}
+.active-loan-apply-btn:hover {
+  color: white;
+  background-color: #1b3fc9;
+}
+.quick-links-container {
+  background-color: #eee;
+}
+.quick-link-item {
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin: 15px;
+}
+.quick-link-title {
+  margin-bottom: 0px;
+}
+.quick-link-image-and-text {
+  display: flex;
+  gap: 5px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
