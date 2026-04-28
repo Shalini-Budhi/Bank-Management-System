@@ -75,7 +75,6 @@ export default function CustomTabs() {
 
   function displayTabs() {
     return data.map((ele, index) => {
-      console.log("indedhfjkdhf", index);
       return <Tab label={ele.label} {...a11yProps({ index })} />;
     });
   }

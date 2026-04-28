@@ -12,6 +12,7 @@ import ExploreAllHdfcBank from "./Components/ExploreAllHdfcBank/ExploreAllHdfcBa
 import SimplyFinanance from "./Components/SimplyFinanance/SimplyFinanance";
 import Login from "./Components/Login/Login";
 import Dashboard from "./Components/Dashboard/Dashboard";
+import HomeData from "./Components/HomeData/HomeData";
 
 function App() {
   const navigate = useNavigate();
@@ -33,6 +34,7 @@ function App() {
             <Route path="/finance" element={<SimplyFinanance />} />
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
+
           </Routes>
         </>
       )}

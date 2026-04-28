@@ -64,6 +64,32 @@
 
 // // backend schema 
 
+// {
+// CustomerID:String | Number,
+// Password: Number | String
+// }
+
+
+
+// retail-app/ dashboard
+
+// tabs 
+
+// Home, Accounts, Send Money, Cards(dropdown), FD/RD(dropdown), Bills & Recharge, Loans , Invest(dropdown), Insure
+
+// For Every tab create a component and call that in tab items
+
+// Home Tab Steps:
+
+// 1. Welcome UserName last Loggedin data ,  special offer for You (main div , another div(h2,(username, loggedin data), special offer (take flex, jsustify content space arround )))
+
+// 2. Take Main Div Again (tabs, my favourite links). here take grid (for tabs col-8, col-4(links))
+
+// 3. Inside tabs (Accounts, Cards, FD/RD, Loans, Invest, Insure)
+
+// 4. Accounts(3 cards) (show balance(card),split card, Limit cards )
+
+// 5. My Favourite Links ALl are Links with hr(lines brackedown)
 // // {
 // // CustomerID:String | Number,
 // // Password: Number | String
@@ -123,24 +149,47 @@
 
 
 
-Tabs section component
+// Tabs section component
 
-Home ---- Home.jsx
-Accounts ---- Accounts.jsx
-Send MOney ---- SendMoney.jsx
+// Home ---- Home.jsx
+// Accounts ---- Accounts.jsx
+// Send MOney ---- SendMoney.jsx
 
-Cards --- Dropdown ---Cards.jsx
-                    Debit Cards
-                    Forex cards
-                    Prepaid Cards
+// Cards --- Dropdown ---Cards.jsx
+//                     Debit Cards
+//                     Forex cards
+//                     Prepaid Cards
 
-FD/RD --- Dropdown ---FIXED DEPOSIT.jsx
-                      Recurrring Deposit
-                      Flexi RD
-
-
-
-                      TABS Home A
+// FD/RD --- Dropdown ---FIXED DEPOSIT.jsx
+//                       Recurrring Deposit
+//                       Flexi RD
 
 
-                      REUSBALE TABS 
+
+//                       TABS Home A
+
+
+//                       REUSBALE TABS 
+
+
+
+// Quick Links Resuable UI
+
+// left side col-4
+
+// links tags with display flex and direction column and a last text
+
+
+// Accounts 
+
+// 1. Accounts Heading 
+
+// 2. main div divide into 2 divs (1 col-8 and 2 one for Links(col-4))
+ 
+// 3. main Content(a p tag(total balance amount ),h4(balance from backend) )
+
+// 4.  one main Card a main div(take 3 divs again )
+
+// 5. all cards are same height and width so use flex and direction column 
+
+// 6. create one custom card and reuse that card for different cards 

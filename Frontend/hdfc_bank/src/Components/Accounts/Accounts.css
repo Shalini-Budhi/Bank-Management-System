@@ -1,0 +1,35 @@
+.account_grid_data{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.quickLink_img_icon{
+  margin-right: 10px;
+  color: rgb(148, 138, 240);
+}
+
+
+.quickLink_name{
+  color: black;
+  text-decoration: none;
+}
+
+.arrow_forward_icon{
+  margin-left: 30px;
+  color: rgb(99, 99, 235);
+}
+
+
+.card_content_accounts_data{
+  border-style: none;
+  border: 1px solid black;
+  gap: 20px;
+  display: flex;
+  background: #f4f2f2;
+  margin-bottom: 20px;
+}
+
+.main_customs_card{
+  background: #ebe9e9 !important;
+  padding: 50px;
+}
