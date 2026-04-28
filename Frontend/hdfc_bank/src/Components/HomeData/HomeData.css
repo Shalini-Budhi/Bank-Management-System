@@ -67,3 +67,9 @@
   margin-top: 25px;
   margin-left: 20px;
 }
+
+
+.send-money-container{
+  display: flex;
+  gap:10px;
+}

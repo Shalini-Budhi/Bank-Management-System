@@ -7,12 +7,16 @@ import CurrencyExchangeSharpIcon from "@mui/icons-material/CurrencyExchangeSharp
 import AddHomeWorkIcon from "@mui/icons-material/AddHomeWork";
 import EnhancedEncryptionIcon from "@mui/icons-material/EnhancedEncryption";
 import PercentIcon from "@mui/icons-material/Percent";
-
+import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
 import React from "react";
 import "../Home/Home.css";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import DirectionsCarFilledIcon from "@mui/icons-material/DirectionsCarFilled";
 import TvIcon from "@mui/icons-material/Tv";
+import Tab from "@mui/material/Tab";
+import TabContext from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
 import {
   Card,
   CardContent,
@@ -22,6 +26,7 @@ import {
   Button,
   Box,
   Link,
+  FormControl,
 } from "@mui/material";
 import { useState } from "react";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
@@ -30,6 +35,10 @@ import HomeIcon from "@mui/icons-material/Home";
 import HealthAndSafetyOutlinedIcon from "@mui/icons-material/HealthAndSafetyOutlined";
 import VolunteerActivismOutlinedIcon from "@mui/icons-material/VolunteerActivismOutlined";
 import AddLocationAltOutlinedIcon from "@mui/icons-material/AddLocationAltOutlined";
+import { NavLink } from "react-router-dom";
+
+import InputLabel from "@mui/material/InputLabel";
+import Select from "@mui/material/Select";
 
 export default function HomeData() {
   const cardsData = [
@@ -120,6 +129,12 @@ export default function HomeData() {
     { label: "DTH", icon: <TvIcon fontSize="small" /> },
   ];
 
+  const [value, setValue] = React.useState("1");
+
+  const handleRechargeChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   const [mobile, setMobile] = useState("");
 
   const handleChange = (e) => {
@@ -180,33 +195,89 @@ export default function HomeData() {
         <div className="send-money-card">
           <Card sx={{ width: "800px" }}>
             <CardContent>
-              <Box mb={4}>
-                <h4 style={{ marginLeft: "16px" }}>Send Money</h4>
-              </Box>
-              {/* Dropdown Row */}
-              <Box mt={2}>
-                <TextField
-                  select
-                  defaultValue="domestic"
-                  sx={{ width: 300, marginBottom: "10px", marginLeft: "15px" }}
-                >
-                  <MenuItem value="domestic">Domestic</MenuItem>
-                  <MenuItem value="international">International</MenuItem>
-                </TextField>
-              </Box>
+              <div className="send-money-container">
+                <Box mb={4}>
+                  <h4 style={{ marginLeft: "16px" }}>Send Money</h4>
+                </Box>
+                {/* Dropdown Row */}
+                <Box mt={2}>
+                  <TextField
+                    select
+                    defaultValue="domestic"
+                    sx={{
+                      "& .MuiOutlinedInput-input": {
+                        padding: "10px 15px",
+                      },
+                      width: 300,
+                      marginBottom: "10px",
+                      marginLeft: "15px",
+                    }}
+                  >
+                    <MenuItem value="domestic">Domestic</MenuItem>
+                    <MenuItem value="international">International</MenuItem>
+                  </TextField>
+                </Box>
 
+                <span className="quickLink_img_icon">test Image</span>
+                <NavLink className="quickLink_name">Add Payeee</NavLink>
+                <span className="arrow_forward_icon">
+                  <ArrowForwardIosSharpIcon />
+                </span>
+              </div>
               <Box mt={2} display="flex" gap={2}>
-                <TextField
+                {/* <TextField
                   label="To"
                   sx={{
+                    "& .MuiOutlinedInput-input": {
+                      padding: "10px 15px",
+                    },
                     flex: 2,
                     marginLeft: "15px",
                   }}
-                ></TextField>
+                > */}
+                {/* <FormControl>
+                    <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={20}
+                      label="Age"
+                      onChange={handleChange}
+                    >
+                      <MenuItem value={10}>Ten</MenuItem>
+                      <MenuItem value={20}>Twenty</MenuItem>
+                      <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
+                  </FormControl> */}
+                {/* </TextField> */}
+
+                <FormControl
+                  sx={{
+                    "& .MuiOutlinedInput-input": {
+                      padding: "10px 15px",
+                    },
+                  }}
+                >
+                  <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={20}
+                    label="Age"
+                    onChange={handleChange}
+                  >
+                    <MenuItem value={10}>Ten</MenuItem>
+                    <MenuItem value={20}>Twenty</MenuItem>
+                    <MenuItem value={30}>Thirty</MenuItem>
+                  </Select>
+                </FormControl>
 
                 <TextField
                   label="From"
                   sx={{
+                    "& .MuiOutlinedInput-input": {
+                      padding: "10px 15px",
+                    },
                     flex: 1,
                     marginLeft: "15px",
                   }}
@@ -215,6 +286,9 @@ export default function HomeData() {
                   label="Amount"
                   type="number"
                   sx={{
+                    "& .MuiOutlinedInput-input": {
+                      padding: "10px 15px",
+                    },
                     flex: 1,
                     marginLeft: "15px",
                   }}
@@ -242,35 +316,76 @@ export default function HomeData() {
             <Box sx={{ textAlign: "left-side", marginLeft: 3, marginTop: 5 }}>
               <h5>Quick Recharge</h5>
             </Box>
-            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
-              {RechargeOptions.map((ele, index) => (
-                <Box
-                  key={index}
-                  textAlign="center"
-                  sx={{
-                    cursor: "pointer",
-                    p: 1,
-                    borderRadius: 2,
-                    width: 80,
-                    "&:hover": { backgroundColor: "#f5f5f5" },
-                  }}
-                >
-                  {ele.icon}
-                  <div>{ele.label}</div>
-                </Box>
-              ))}
-            </Box>
-            <Box mt={3} display="flex" alignItems="flex-end" gap={4}>
-              <Box sx={{ marginLeft: 1, marginRight: 1 }}>
-                <label>Enter Mobile Number</label>
-                <TextField
-                  value={mobile}
-                  onChange={handleChange}
-                  inputProps={{ maxLength: 10 }}
-                  size="small"
-                />
-              </Box>
 
+            <Box sx={{ width: "100%", typography: "body1" }}>
+              <TabContext value={value}>
+                <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+                  <TabList
+                    onChange={handleRechargeChange}
+                    aria-label="lab API tabs example"
+                  >
+                    {RechargeOptions.map((ele, index) => (
+                     
+
+                      <Tab
+                        label={ele.label}
+                        value={ele.value}
+                        key={index}
+                        textAlign="center"
+                        sx={{
+                          cursor: "pointer",
+                          p: 1,
+                          borderRadius: 2,
+                          width: 80,
+                          "&:hover": { backgroundColor: "#f5f5f5" },
+                        }}
+                      >
+                        {ele.icon}
+                        <div>{ele.label}</div>
+                      </Tab>
+                    ))}
+                  </TabList>
+                </Box>
+                <TabPanel value={0}>
+                  {" "}
+                  <Box sx={{ marginLeft: 1, marginRight: 1 }}>
+                    <label>Enter Mobile Number</label>
+                    <TextField
+                      value={mobile}
+                      onChange={handleChange}
+                      inputProps={{ maxLength: 10 }}
+                      size="small"
+                    />
+                  </Box>
+                </TabPanel>
+                <TabPanel value={1}>
+                  {" "}
+                  <Box sx={{ marginLeft: 1, marginRight: 1 }}>
+                    <label>Enter Fastag </label>
+                    <TextField
+                      value={mobile}
+                      onChange={handleChange}
+                      inputProps={{ maxLength: 10 }}
+                      size="small"
+                    />
+                  </Box>
+                </TabPanel>
+                <TabPanel value={2}>
+                  {" "}
+                  <Box sx={{ marginLeft: 1, marginRight: 1 }}>
+                    <label>Enter Vehicle Number</label>
+                    <TextField
+                      value={mobile}
+                      onChange={handleChange}
+                      inputProps={{ maxLength: 10 }}
+                      size="small"
+                    />
+                  </Box>
+                </TabPanel>
+              </TabContext>
+            </Box>
+
+            <Box mt={3} display="flex" alignItems="flex-end" gap={4}>
               <Button
                 variant="contained"
                 onClick={handleSubmit}
