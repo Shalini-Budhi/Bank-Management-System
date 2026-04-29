@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const { connectDB } = require("./src/config/config");
 const app = require("./src/app");
 
+
 connectDB();
 
 app.listen(3000, () => {
