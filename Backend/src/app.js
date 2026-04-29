@@ -1,7 +1,7 @@
 const http = require("http");
 const express = require("express");
 const cors = require("cors");
-const { load,login, signup, authMiddleWare,dashboard, holdings, funds } = require("./routes/routes");
+const { load,login, signup, authMiddleWare,dashboard, holdings, funds, userData } = require("./routes/routes");
 const app = express();
 app.use(express.json());
 
@@ -18,5 +18,7 @@ app.get("/", load);
 app.post("/login", login);
 
 app.post("/signup", signup);
+
+app.get("/userData", userData)
 
 module.exports = app;

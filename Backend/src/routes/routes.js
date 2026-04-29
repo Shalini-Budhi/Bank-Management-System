@@ -34,7 +34,11 @@ exports.login = async (req, res) => {
     }
 
     if (CustomerID === userObj?.CustomerID) {
-      return res.json({ CustomerID, Password, message: "user fetched succesfully" });
+      return res.json({
+        CustomerID,
+        Password,
+        message: "user fetched succesfully",
+      });
       console.log(userObj.CustomerID, "userObj");
     } else {
       return res.json({ message: "invalid CustomerID address" });
@@ -43,8 +47,6 @@ exports.login = async (req, res) => {
     return res.json({ message: "invalid credentials" });
   }
 };
-
-
 
 exports.signup = async (req, res) => {
   const {
@@ -74,7 +76,19 @@ exports.signup = async (req, res) => {
   }
 };
 
+exports.userData = async (req, res) => {
+
+  try {
+    const userData = await SignUpSchema.findOne({ CustomerID });
+    console.log(userData);
+    
+  } catch (error) {
+    console.log("error", error)
+    
+  }
+  
+};
 
 // user singup ---- signupSchema --- data ikkda store chestunam
 
-// loginSchema add chestunam ---login 
+// loginSchema add chestunam ---login
