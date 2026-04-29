@@ -14,6 +14,7 @@ app.use(express.json());
 const {homeRouter} = require("./routes/homeRoutes")
 const {accountsRouter} = require("./routes/accountRoutes");
 const { billsandRecharge } = require("./routes/billsandRecharge");
+const { loans, loansApi } = require("./routes/loansRoute");
 
 
 console.log(typeof homeRouter)
@@ -38,6 +39,8 @@ app.get("/cards", cards);
 
 console.log(billsandRecharge)
 app.get("/api/billsrecharge", billsandRecharge)
+
+app.get("/loans", loansApi)
 
 // app.get("/userData", userData)
 
