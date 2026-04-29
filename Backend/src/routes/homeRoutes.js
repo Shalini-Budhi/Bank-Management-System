@@ -5,7 +5,7 @@ const router = express.Router();
 const { user, accounts } = require("../data/mockData");
 
 // HOME API
-router.get("/", (req, res) => {
+router.get("/home", (req, res) => {
   const totalBalance = accounts.reduce((sum, acc) => sum + acc.balance, 0);
 
   res.status(200).json({

@@ -10,7 +10,7 @@ function maskAccountNumber(accountId) {
 }
 
 // ACCOUNTS API
-router.get("/", (req, res) => {
+router.get("/accounts", (req, res) => {
   const totalBalance = accounts.reduce((sum, acc) => sum + acc.balance, 0);
 
   const formattedAccounts = accounts.map(acc => ({

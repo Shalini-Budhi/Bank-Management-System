@@ -19,7 +19,7 @@ app.get("/", load);
 app.post("/login", login);
 
 app.post("/signup", signup);
-app.use("/api/home", homeRoutes);
-app.use("/api/accounts", accountRoutes);
+app.use("/", homeRoutes);
+app.use("/", accountRoutes);
 
 module.exports = app;
