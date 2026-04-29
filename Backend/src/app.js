@@ -6,12 +6,14 @@ const {
   load,
   login,
   signup,
+  cards
   
 } = require("./routes/routes");
 const app = express();
 app.use(express.json());
 const {homeRouter} = require("./routes/homeRoutes")
-const {accountsRouter} = require("./routes/accountRoutes")
+const {accountsRouter} = require("./routes/accountRoutes");
+const { billsandRecharge } = require("./routes/billsandRecharge");
 
 
 console.log(typeof homeRouter)
@@ -32,7 +34,10 @@ app.get("/api/home", homeRouter);
 app.get("/api/accounts", accountsRouter);
 
 
-// app.get("/cards", cards);
+app.get("/cards", cards);
+
+console.log(billsandRecharge)
+app.get("/api/billsrecharge", billsandRecharge)
 
 // app.get("/userData", userData)
 

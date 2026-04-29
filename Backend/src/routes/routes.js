@@ -78,26 +78,16 @@ exports.signup = async (req, res) => {
 };
 
 
-const { accounts, user } = require("../data/mockData");
+exports.cards = async (req, res) => {
+  const homeArr = [{ anme: "HomeData", location: "Hyd" }];
 
-
-exports.homeRouter = async (req, res) => {
-  const totalBalance = accounts.reduce((sum, acc) => sum + acc.balance, 0);
-
-  res.status(200).json({
-    user: {
-      name: user.name,
-      lastLogin: user.lastLogin,
-    },
-    accountsSummary: {
-      totalBalance,
-      totalAccounts: accounts.length,
-    },
-    quickLinks: ["Send Money", "Pay Bills", "Cards"],
-  });
+  try {
+    res.json({ message: "fetched Home Data succesfully", data: homeArr });
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 
-// user singup ---- signupSchema --- data ikkda store chestunam
 
-// loginSchema add chestunam ---login
+
