@@ -11,13 +11,13 @@ router.get("/", (req, res) => {
   res.status(200).json({
     user: {
       name: user.name,
-      lastLogin: user.lastLogin
+      lastLogin: user.lastLogin,
     },
     accountsSummary: {
       totalBalance,
-      totalAccounts: accounts.length
+      totalAccounts: accounts.length,
     },
-    quickLinks: ["Send Money", "Pay Bills", "Cards"]
+    quickLinks: ["Send Money", "Pay Bills", "Cards"],
   });
 });
 
