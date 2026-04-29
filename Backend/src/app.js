@@ -15,6 +15,7 @@ const {homeRouter} = require("./routes/homeRoutes")
 const {accountsRouter} = require("./routes/accountRoutes");
 const { billsandRecharge } = require("./routes/billsandRecharge");
 const { loans, loansApi } = require("./routes/loansRoute");
+const { investApi } = require("./routes/investRoute");
 
 
 console.log(typeof homeRouter)
@@ -41,6 +42,8 @@ console.log(billsandRecharge)
 app.get("/api/billsrecharge", billsandRecharge)
 
 app.get("/loans", loansApi)
+app.get("/investments", investApi);
+
 
 // app.get("/userData", userData)
 
