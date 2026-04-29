@@ -32,6 +32,8 @@ export default function NetBankingLoginForm() {
     console.log("respnes", response);
     setAccess_token(response.data.access_token);
 
+    localStorage.setItem('userName', response.data.CustomerID)
+
     // ? login scucces /dashboard naviaget ayoipovali?
     if (response.status === 200) {
       navigate("/dashboard");

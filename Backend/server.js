@@ -10,6 +10,8 @@ const app = require("./src/app");
 
 console.log("ConnectDB", connectDB());
 
+connectDB();
+
 app.listen(process.env.PORT, () => {
   console.log("Server started check now");
 });

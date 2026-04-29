@@ -3,3 +3,5 @@ env
 .env*
 .env
 *.env
+hdfc_bank/node_modules/
+package-lock.json

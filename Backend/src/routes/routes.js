@@ -76,18 +76,6 @@ exports.signup = async (req, res) => {
   }
 };
 
-exports.userData = async (req, res) => {
-
-  try {
-    const userData = await SignUpSchema.findOne({ CustomerID });
-    console.log(userData);
-    
-  } catch (error) {
-    console.log("error", error)
-    
-  }
-  
-};
 
 // user singup ---- signupSchema --- data ikkda store chestunam
 

@@ -193,3 +193,38 @@
 // 5. all cards are same height and width so use flex and direction column 
 
 // 6. create one custom card and reuse that card for different cards 
+
+
+
+Frontend routes 
+
+
+/home
+/accounts
+/sendMoney
+
+<Routes path="/home" element={<Home/>}/>
+<Routes path="/accounts" element={<Accounts/>}/>
+<Routes path="/sendMoney" element={<SendMoney/>}/>
+
+
+
+Backend routes
+
+/home
+/accounts
+/sendMoney
+
+router.get('/home', (req,res)=>{
+const homeArr =[{anme:"HomeData",location:"Hyd"}]
+
+res.send(homeArr)
+
+})
+
+
+backedn nundi frontned ku array vachestundi 
+
+
+
+map use chesi data dispaly chestav
