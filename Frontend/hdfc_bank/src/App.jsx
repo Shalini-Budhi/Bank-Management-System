@@ -14,6 +14,7 @@ import Login from "./Components/Login/Login";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import HomeData from "./Components/HomeData/HomeData";
 import Bills_Recharge from "./Components/Bills_Recharge/Bills_Recharge";
+import Insure from "./Components/Insure/Insure";
 function App() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -35,6 +36,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/billsrecharge" element={<Bills_Recharge/>}/>
+            <Route path="/insure" element={<Insure/>}/>
           </Routes>
         </>
       )}
