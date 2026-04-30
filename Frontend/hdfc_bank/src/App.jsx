@@ -13,7 +13,7 @@ import SimplyFinanance from "./Components/SimplyFinanance/SimplyFinanance";
 import Login from "./Components/Login/Login";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import HomeData from "./Components/HomeData/HomeData";
-
+import Bills_Recharge from "./Components/Bills_Recharge/Bills_Recharge";
 function App() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -34,7 +34,7 @@ function App() {
             <Route path="/finance" element={<SimplyFinanance />} />
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
-
+            <Route path="/billsrecharge" element={<Bills_Recharge/>}/>
           </Routes>
         </>
       )}
