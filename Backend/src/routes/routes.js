@@ -2,6 +2,7 @@ const SignUpSchema = require("../models/SignupSchema");
 const bcrypt = require("bcrypt");
 
 const jwt = require("jsonwebtoken");
+
 exports.load = async (req, res) => {
   res.send("Hi Girisha");
 };
@@ -76,6 +77,7 @@ exports.signup = async (req, res) => {
   }
 };
 
+
 exports.cards = async (req, res) => {
   const homeArr = [{ anme: "HomeData", location: "Hyd" }];
 
@@ -86,6 +88,6 @@ exports.cards = async (req, res) => {
   }
 };
 
-// user singup ---- signupSchema --- data ikkda store chestunam
 
-// loginSchema add chestunam ---login
+
+
