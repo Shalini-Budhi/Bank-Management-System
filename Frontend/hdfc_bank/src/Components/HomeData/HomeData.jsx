@@ -8,7 +8,7 @@ import AddHomeWorkIcon from "@mui/icons-material/AddHomeWork";
 import EnhancedEncryptionIcon from "@mui/icons-material/EnhancedEncryption";
 import PercentIcon from "@mui/icons-material/Percent";
 import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
-import React from "react";
+import React, { useEffect } from "react";
 import "../Home/Home.css";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import DirectionsCarFilledIcon from "@mui/icons-material/DirectionsCarFilled";
@@ -17,6 +17,7 @@ import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
+import axios from "axios";
 import {
   Card,
   CardContent,
@@ -39,6 +40,7 @@ import { NavLink } from "react-router-dom";
 
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
+import moment from "moment";
 
 export default function HomeData() {
   const cardsData = [
@@ -150,13 +152,29 @@ export default function HomeData() {
     }
     console.log("Mobile:", mobile);
   };
+
+  const userName = localStorage.getItem("userName");
+
+  let formattedName = userName.split("@")[0].trim().toUpperCase();
+
+  async function getCardsApi() {
+    const response = await axios.get("http://localhost:3000/cards");
+    console.log("response", response);
+  }
+
+  useEffect(() => {
+    getCardsApi();
+  }, []);
+
   return (
     <>
       <div className="row">
         <div className="col-8">
           <div>
-            Home Welcome, v siva kumar Last logged in at 25/04/26, 10:12 am
+            Home Welcome, {formattedName} Last logged in at{" "}
+            {moment().format("MMMM Do YYYY, h:mm:ss a")}
           </div>
+
           <div className="flex-container">
             <button className="homeBtn">Accounts</button>
             <button className="homeBtn">Cards</button>
@@ -325,8 +343,6 @@ export default function HomeData() {
                     aria-label="lab API tabs example"
                   >
                     {RechargeOptions.map((ele, index) => (
-                     
-
                       <Tab
                         label={ele.label}
                         value={ele.value}

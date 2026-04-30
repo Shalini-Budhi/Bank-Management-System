@@ -1,12 +1,12 @@
 // Mock User Data
-const user = {
+export const user = {
   id: 1,
   name: "Harish",
   lastLogin: new Date()
 };
 
 // Mock Accounts Data
-const accounts = [
+export const accounts = [
   {
     accountId: "1234567890",
     type: "Savings",

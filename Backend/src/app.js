@@ -1,18 +1,27 @@
 const http = require("http");
 const express = require("express");
 const cors = require("cors");
-const { load,login, signup, authMiddleWare,dashboard, holdings, funds } = require("./routes/routes");
+
+const {
+  load,
+  login,
+  signup,
+  cards
+  
+} = require("./routes/routes");
 const app = express();
 app.use(express.json());
-const homeRoutes = require("./routes/homeRoutes");
-const accountRoutes = require("./routes/accountRoutes");
-const billRoutes = require("./routes/billRoutes");
-const insuranceRoutes = require("./routes/insuranceRoutes");
-const cardRoutes = require("./routes/cardRoutes");
-const loanRoutes = require("./routes/loanRoutes");
+const {homeRouter} = require("./routes/homeRoutes")
+const {accountsRouter} = require("./routes/accountRoutes");
+const { billsandRecharge } = require("./routes/billsandRecharge");
+const { loans, loansApi } = require("./routes/loansRoute");
+const { investApi } = require("./routes/investRoute");
+
+
+console.log(typeof homeRouter)
 
 const corsOptions = {
-  origin: "*", 
+  origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
 };
@@ -23,11 +32,19 @@ app.get("/", load);
 app.post("/login", login);
 
 app.post("/signup", signup);
-app.use("/", homeRoutes);
-app.use("/", accountRoutes);
-app.use("/", billRoutes);
-app.use("/", insuranceRoutes);
-app.use("/", cardRoutes);
-app.use("/", loanRoutes);
+app.get("/api/home", homeRouter);
+app.get("/api/accounts", accountsRouter);
+
+
+app.get("/cards", cards);
+
+console.log(billsandRecharge)
+app.get("/api/billsrecharge", billsandRecharge)
+
+app.get("/loans", loansApi)
+app.get("/investments", investApi);
+
+
+// app.get("/userData", userData)
 
 module.exports = app;
