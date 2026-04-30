@@ -16,6 +16,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import CustomModalPopup from "../CustomModalPopup/CustomModalPopup";
+import { useNavigate } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -60,7 +61,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
+const navigate = useNavigate();
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -75,6 +76,11 @@ export default function NavBar() {
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
+  };
+
+  const handleLogOut = () => {
+    localStorage.removeItem("userName");
+    navigate("/login");
   };
 
   const handleMobileMenuOpen = (event) => {
@@ -100,6 +106,7 @@ export default function NavBar() {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleLogOut}>User Logout</MenuItem>
     </Menu>
   );
 
