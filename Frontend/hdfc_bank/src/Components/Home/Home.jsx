@@ -16,6 +16,7 @@ import Bills_Recharge from "../Bills_Recharge/Bills_Recharge";
 import Loans from "../Loans/Loans";
 import Invest from "../Invest/Invest";
 import Insure from "../Insure/Insure";
+import Fd_Rd from "../Fd_Rd/Fd_Rd";
 
 export default function Home() {
   const tabsData = [
@@ -37,7 +38,7 @@ export default function Home() {
     },
     {
       name: "FD/RD",
-      component: "HomeData Tabs",
+      component: <Fd_Rd/>
     },
     {
       name: "Bills & Recharge",

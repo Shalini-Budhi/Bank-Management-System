@@ -13,7 +13,8 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-
+import { useEffect } from "react";
+import axios from "axios"
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -49,6 +50,17 @@ function BasicTabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+async function getSendMoneyApi() {
+  const response = await axios.get("http://localhost:3000/sendmoney");
+  console.log("response", response);
+}
+
+useEffect(() => {
+  getSendMoneyApi();
+}, []);
+
+
 
   return (
     <Box sx={{ width: '100%' }}>

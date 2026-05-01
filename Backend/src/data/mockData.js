@@ -37,7 +37,7 @@ export const bills = [
 ];
 
 // Insurance Data
-export const insurance = [
+export const insuranceData = [
   {
     id: 1,
     title: "Mediclaim",

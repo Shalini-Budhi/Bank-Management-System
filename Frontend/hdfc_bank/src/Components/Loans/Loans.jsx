@@ -1,7 +1,18 @@
 import { useState } from "react";
 import "./Loans.css";
-
+import { useEffect } from "react";
+import axios from "axios";
 export default function Loans() {
+
+
+  async function getLoansApi() {
+    const response = await axios.get("http://localhost:3000/loans");
+    console.log("response", response);
+  }
+
+  useEffect(() => {
+    getLoansApi();
+  }, []);
   // QUICK LINKS CARD
   function QuickLinksCard() {
     const quickLinks = [

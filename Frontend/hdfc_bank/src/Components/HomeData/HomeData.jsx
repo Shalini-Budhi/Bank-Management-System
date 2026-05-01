@@ -153,7 +153,8 @@ export default function HomeData() {
     console.log("Mobile:", mobile);
   };
 
-  const userName = localStorage.getItem("userName");
+  // const userName = localStorage.getItem("userName");
+  const userName = "madhava hardcode array"
 
   let formattedName = userName.split("@")[0].trim().toUpperCase();
 

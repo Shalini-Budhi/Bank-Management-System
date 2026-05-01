@@ -1,6 +1,6 @@
 const { fRRDData } = require("../data/mockData");
 
-exports.frrd = async(req, res) =>{
+exports.fdrd = async(req, res) =>{
 
   try {
     res.json({
