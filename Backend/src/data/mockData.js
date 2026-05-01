@@ -21,7 +21,7 @@ export const accounts = [
   }
 ];
 // Bills Data
-const bills = [
+export const bills = [
   {
     billId: 1,
     type: "Electricity",
@@ -37,7 +37,7 @@ const bills = [
 ];
 
 // Insurance Data
-const insurance = [
+export const insurance = [
   {
     id: 1,
     title: "Mediclaim",
@@ -51,7 +51,7 @@ const insurance = [
 ];
 
 // Cards Data
-const cards = [
+export const cards = [
   {
     id: 1,
     feature: "Split Bill",
@@ -65,7 +65,7 @@ const cards = [
 ];
 
 // Loans Data
-const loans = [
+export const loans = [
   {
     id: 1,
     type: "Personal Loan",
@@ -78,11 +78,9 @@ const loans = [
   }
 ];
 
-module.exports = {
-  user,
-  accounts,
-  bills,
-  insurance,
-  cards,
-  loans
-};
+// module.exports = {
+//   bills,
+//   insurance,
+//   cards,
+//   loans
+// };

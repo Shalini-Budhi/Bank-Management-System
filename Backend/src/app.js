@@ -2,23 +2,15 @@ const http = require("http");
 const express = require("express");
 const cors = require("cors");
 
-const {
-  load,
-  login,
-  signup,
-  cards
-  
-} = require("./routes/routes");
+const { load, login, signup, cards } = require("./routes/routes");
 const app = express();
 app.use(express.json());
-const {homeRouter} = require("./routes/homeRoutes")
-const {accountsRouter} = require("./routes/accountRoutes");
+const { homeRouter } = require("./routes/homeRoutes");
+const { accountsRouter } = require("./routes/accountRoutes");
 const { billsandRecharge } = require("./routes/billsandRecharge");
 const { loans, loansApi } = require("./routes/loansRoute");
 const { investApi } = require("./routes/investRoute");
-
-
-console.log(typeof homeRouter)
+const insuranceRoute = require("./routes/insuranceRoutes")
 
 const corsOptions = {
   origin: "*",
@@ -35,15 +27,13 @@ app.post("/signup", signup);
 app.get("/api/home", homeRouter);
 app.get("/api/accounts", accountsRouter);
 
-
 app.get("/cards", cards);
 
-console.log(billsandRecharge)
-app.get("/api/billsrecharge", billsandRecharge)
+app.get("/api/billsrecharge", billsandRecharge);
 
-app.get("/loans", loansApi)
+app.get("/loans", loansApi);
 app.get("/investments", investApi);
-
+app.use("/api/insurance", insuranceRoute)
 
 // app.get("/userData", userData)
 
