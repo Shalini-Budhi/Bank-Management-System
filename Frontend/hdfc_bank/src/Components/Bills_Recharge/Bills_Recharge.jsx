@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Bills_Recharge.css";
-
+import axios from "axios";
 function Bills_Recharge() {
   const billsData = [
     {
@@ -24,6 +24,16 @@ function Bills_Recharge() {
   const [filter, setFilter] = useState("All");
   const [mobile, setMobile] = useState("");
   const [category, setCategory] = useState("Mobile Prepaid");
+
+
+  async function getBillsandRechargeApi() {
+    const response = await axios.get("http://localhost:3000/billsrecharge");
+    console.log("response", response);
+  }
+
+  useEffect(() => {
+    getBillsandRechargeApi();
+  }, []);
 
   return (
     <div className="pay-container">
