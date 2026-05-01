@@ -8,7 +8,6 @@ const connectDB = require("./src/config/config");
 
 const app = require("./src/app");
 
-
 console.log("ConnectDB", connectDB());
 
 connectDB();

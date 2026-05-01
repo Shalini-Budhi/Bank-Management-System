@@ -1,13 +1,16 @@
-const express = require("express");
-const router = express.Router();
+const { insuranceData } = require("../data/mockData");
 
-const { insurance } = require("../data/mockData");
 
 // /api/insurance
-router.get("/insurance", (req, res) => {
-  res.status(200).json({
-    insuranceProducts: insurance
-  });
-});
-
-module.exports = router;
+exports.insurance = async (req, res) => {
+  try {
+    res.json({
+      message: "FR/RD data fetched",
+      data: fRRDData,
+    });
+  } catch (error) {
+    res.json({
+      message: "FR/RD data not fetached",
+    });
+  }
+};
