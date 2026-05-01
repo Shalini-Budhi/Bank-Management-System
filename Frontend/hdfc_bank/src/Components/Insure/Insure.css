@@ -1,0 +1,132 @@
+.insurance-container {
+  padding: 20px;
+  background: #f5f7fb;
+  border-radius: 10px;
+  max-width: 1300px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  margin-top: 100px;
+}
+
+/* HEADER */
+.insurance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.insurance-header h2{
+  color: black;
+}
+
+.renew-btn {
+  padding: 8px 18px;
+  border: 1px solid #2b6df6;
+  background: #f0f4ff;
+  color: #2b6df6;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* MAIN TABS */
+.main-tabs {
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 8px;
+}
+
+.main-tabs span {
+  cursor: pointer;
+  color: #555;
+  padding-bottom: 6px;
+}
+
+.active-main {
+  color: #2b6df6;
+  border-bottom: 3px solid #2b6df6;
+  font-weight: 600;
+}
+
+/* CATEGORY TABS */
+.tabs {
+  display: flex;
+  gap: 25px;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  background: #e9edf7;
+  color: #2b6df6;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background: #2b6df6;
+  color: white;
+}
+
+/* CARDS */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content h3 {
+  margin-bottom: 10px;
+}
+
+.card-content ul {
+  padding-left: 18px;
+  margin-bottom: 15px;
+}
+
+.card-content li {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+/* BUTTON */
+.explore-btn {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #2b6df6;
+  background: white;
+  color: #2b6df6;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.explore-btn:hover {
+  background: #2b6df6;
+  color: white;
+}
