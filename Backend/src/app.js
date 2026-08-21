@@ -10,10 +10,12 @@ const { accountsRouter } = require("./routes/accountRoutes");
 const { billsandRecharge } = require("./routes/billsandRecharge");
 const { loans, loansApi } = require("./routes/loansRoute");
 const { investApi } = require("./routes/investRoute");
-const {sendMoney} = require("./routes/sendMoneyRoute");
+const { sendMoney } = require("./routes/sendMoneyRoute");
 const { fdrd } = require("./routes/frRDroute");
 
-const {insurance} = require("./routes/insuranceRoutes")
+const { createAccount } = require("./routes/createAccount");
+
+const { insurance } = require("./routes/insuranceRoutes")
 
 const corsOptions = {
   origin: "*",
@@ -39,6 +41,14 @@ app.get("/investments", investApi);
 app.get("/insurance", insurance)
 app.get("/sendmoney", sendMoney)
 app.get("/fdrd", fdrd)
+
+
+// crud operations
+
+// create 
+
+
+app.post("/create-account", createAccount)
 
 
 // app.get("/userData", userData)
