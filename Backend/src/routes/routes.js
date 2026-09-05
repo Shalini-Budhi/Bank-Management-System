@@ -8,44 +8,72 @@ exports.load = async (req, res) => {
 };
 
 exports.login = async (req, res) => {
-  const { CustomerID, Password } = req.body;
-  console.log(CustomerID, Password, "usererkjfhskjhfs");
-  const userObj = await SignUpSchema.findOne({ CustomerID: CustomerID });
-
-  console.log("userObj", userObj);
-  const userPassword = await bcrypt.compare(Password, userObj.Password);
-  console.log(userPassword, "userPassword");
-
-  const token = jwt.sign(
-    {
-      userID: userObj.id,
-      CustomerID: userObj.CustomerID,
-    },
-    process.env.JWT_SECRET_KEY,
-    { expiresIn: "5h" },
-  );
-  res.json({
-    access_token: token,
-    CustomerID: userObj.CustomerID,
-    message: "login successful",
-  });
   try {
-    if (!userObj) {
-      return res.json({ message: "Invalkid credentails" });
+    const { CustomerID, Password } = req.body;
+
+    if (!CustomerID || !Password) {
+      return res.status(400).json({
+        success: false,
+        message: "Please enter Customer ID / Account Number and Password",
+      });
     }
 
-    if (CustomerID === userObj?.CustomerID) {
-      return res.json({
-        CustomerID,
-        Password,
-        message: "user fetched succesfully",
+    const userObj = await SignUpSchema.findOne({
+      $or: [
+        { accountNumber: CustomerID },
+        { CustomerID: CustomerID },
+        { email: CustomerID.toLowerCase() },
+        { mobile: CustomerID },
+      ],
+    });
+
+    if (!userObj) {
+      return res.status(401).json({
+        success: false,
+        message: "Invalid credentials. Account not found.",
       });
-      console.log(userObj.CustomerID, "userObj");
-    } else {
-      return res.json({ message: "invalid CustomerID address" });
     }
+
+    const userPasswordHash = userObj.password || userObj.Password;
+    let isMatch = false;
+    if (userPasswordHash) {
+      isMatch = await bcrypt.compare(Password, userPasswordHash);
+    }
+
+    if (!isMatch) {
+      return res.status(401).json({
+        success: false,
+        message: "Invalid password. Please check your credentials.",
+      });
+    }
+
+    const secretKey = process.env.JWT_SECRET_KEY || "bank_management_jwt_secret_key";
+    const token = jwt.sign(
+      {
+        userID: userObj._id,
+        accountNumber: userObj.accountNumber,
+        CustomerID: userObj.accountNumber || userObj.CustomerID,
+        fullName: userObj.fullName || userObj.fullname,
+      },
+      secretKey,
+      { expiresIn: "5h" }
+    );
+
+    return res.status(200).json({
+      success: true,
+      message: "Login successful",
+      access_token: token,
+      CustomerID: userObj.accountNumber || userObj.CustomerID || userObj.fullName,
+      fullName: userObj.fullName || userObj.fullname,
+      accountNumber: userObj.accountNumber,
+      accountType: userObj.accountType,
+    });
   } catch (error) {
-    return res.json({ message: "invalid credentials" });
+    console.error("Login Error:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Server error during login",
+    });
   }
 };
 

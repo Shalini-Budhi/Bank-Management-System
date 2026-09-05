@@ -1,46 +1,27 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  useNavigate,
-  useLocation,
-} from "react-router-dom";
-import NavBar from "./Components/NavBar/NavBar";
+import { Routes, Route } from "react-router-dom";
 import CustomTabs from "./Components/CustomTabs/CustomTabs";
 import CustomCard from "./Components/CustomCard/CustomCard";
 import ExploreAllHdfcBank from "./Components/ExploreAllHdfcBank/ExploreAllHdfcBank";
 import SimplyFinanance from "./Components/SimplyFinanance/SimplyFinanance";
-import Login from "./Components/Login/Login";
+import SignUp from "./Components/SignUp/SignUp";
+import NetBankingLoginForm from "./Components/NetBankingLoginForm/NetBankingLoginForm";
 import Dashboard from "./Components/Dashboard/Dashboard";
-import HomeData from "./Components/HomeData/HomeData";
 import Bills_Recharge from "./Components/Bills_Recharge/Bills_Recharge";
 import Insure from "./Components/Insure/Insure";
+
 function App() {
-  const navigate = useNavigate();
-  const location = useLocation();
-  console.log(location, "location");
-
   return (
-    <>
-      {location.pathname === "/login" ? (
-        <Login />
-      ) : (
-        <>
-          <NavBar />
-
-          <Routes>
-            <Route path="/" element={<CustomTabs />} />
-            <Route path="/cards" element={<CustomCard />} />
-            <Route path="/explore" element={<ExploreAllHdfcBank />} />
-            <Route path="/finance" element={<SimplyFinanance />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/billsrecharge" element={<Bills_Recharge/>}/>
-            <Route path="/insure" element={<Insure/>}/>
-          </Routes>
-        </>
-      )}
-    </>
+    <Routes>
+      <Route path="/" element={<NetBankingLoginForm />} />
+      <Route path="/signup" element={<SignUp />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/tabs" element={<CustomTabs />} />
+      <Route path="/cards" element={<CustomCard />} />
+      <Route path="/explore" element={<ExploreAllHdfcBank />} />
+      <Route path="/finance" element={<SimplyFinanance />} />
+      <Route path="/billsrecharge" element={<Bills_Recharge />} />
+      <Route path="/insure" element={<Insure />} />
+    </Routes>
   );
 }
 

@@ -17,7 +17,7 @@ import Loans from "../Loans/Loans";
 import Invest from "../Invest/Invest";
 import Insure from "../Insure/Insure";
 import Fd_Rd from "../Fd_Rd/Fd_Rd";
-import Crud from "../../Crud/Crud";
+
 
 
 export default function Home() {
@@ -57,10 +57,6 @@ export default function Home() {
     {
       name: "Insure",
       component: <Insure />,
-    },
-     {
-      name: "CRUD",
-      component: <Crud />,
     },
   ];
 

@@ -2,7 +2,8 @@ const http = require("http");
 const express = require("express");
 const cors = require("cors");
 
-const { load, login, signup, cards } = require("./routes/routes");
+const { load, login, cards } = require("./routes/routes");
+const { SignUp } = require("./routes/SignUp");
 const app = express();
 app.use(express.json());
 const { homeRouter } = require("./routes/homeRoutes");
@@ -28,7 +29,7 @@ app.get("/", load);
 
 app.post("/login", login);
 
-app.post("/signup", signup);
+app.post("/signup", SignUp);
 app.get("/api/home", homeRouter);
 app.get("/api/accounts", accountsRouter);
 
@@ -42,8 +43,6 @@ app.get("/insurance", insurance)
 app.get("/sendmoney", sendMoney)
 app.get("/fdrd", fdrd)
 
-
-// crud operations
 
 // create 
 
