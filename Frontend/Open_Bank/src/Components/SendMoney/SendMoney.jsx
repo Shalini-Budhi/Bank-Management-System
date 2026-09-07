@@ -104,7 +104,7 @@ export default function SendMoney() {
               />
               <SearchIcon className="search-icon" />
             </div>
-            <p className="paragraph">My HDFC Accounts / Other Payees</p>
+            <p className="paragraph">My Open Bank Accounts / Other Payees</p>
             <h6 style={{fontSize:'13px'}}>Favourite Payee(0)</h6>
             <button className="add-button"><span style={{color:'#0384fc'}}>+</span></button>
              <p className="paragraph" style={{color:'#0384fc', marginTop:'10px'}}>Add New Favourite</p>
@@ -141,7 +141,7 @@ export default function SendMoney() {
               <div className="inner-links">
                 <div  className="left-content">
                 <AssuredWorkloadOutlinedIcon className="icons" />
-                <p className="paragraph">HDFC Branch/ATM Locator</p>
+                <p className="paragraph">Open Bank Branch/ATM Locator</p>
                 </div>
                 <KeyboardArrowRightIcon className='arrow-symbol'/>
               </div>

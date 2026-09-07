@@ -1,0 +1,95 @@
+.hdfc-greeting-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px 18px 28px;
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.hdfc-greeting-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hdfc-greeting-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+}
+
+.hdfc-greeting-subtitle {
+  margin: 0;
+  font-size: 12.5px;
+  color: #93c5fd;
+  opacity: 0.9;
+}
+
+.hdfc-greeting-right {
+  display: flex;
+  align-items: center;
+}
+
+.hdfc-special-offers-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #a5f3fc 0%, #7dd3fc 100%);
+  color: #032b69;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  padding: 8px 16px 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(3, 43, 105, 0.35);
+  font-weight: 700;
+  font-size: 13.5px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hdfc-special-offers-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.45);
+  background: linear-gradient(135deg, #bae6fd 0%, #38bdf8 100%);
+}
+
+.hdfc-gift-icon-container {
+  width: 28px;
+  height: 28px;
+  background-color: #022055;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.hdfc-gift-emoji {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.hdfc-offers-text {
+  letter-spacing: -0.1px;
+}
+
+.hdfc-offers-arrow {
+  color: #032b69;
+  transition: transform 0.2s ease;
+}
+
+.hdfc-special-offers-btn:hover .hdfc-offers-arrow {
+  transform: translateX(3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hdfc-greeting-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+  }
+}

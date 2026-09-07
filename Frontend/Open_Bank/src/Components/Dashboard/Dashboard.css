@@ -1,0 +1,76 @@
+/* Main Dashboard Shell */
+.hdfc-dashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #011438 0%, #001f54 60%, #00173d 100%);
+  color: #ffffff;
+  position: relative;
+  overflow-x: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Background Graphic Wave Pattern */
+.hdfc-bg-watermark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 600px;
+  height: 600px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.hdfc-watermark-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Main Content Container */
+.hdfc-main-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 12px 40px 12px;
+}
+
+/* 2-Column Grid for Products and Quick Links */
+.hdfc-dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  padding: 8px 28px;
+  align-items: stretch;
+}
+
+.hdfc-grid-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.hdfc-grid-right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Bottom Section: Send Money Widget */
+.hdfc-bottom-section {
+  padding: 24px 28px 0 28px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1180px) {
+  .hdfc-dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hdfc-dashboard-grid {
+    padding: 8px 16px;
+  }
+  .hdfc-bottom-section {
+    padding: 16px 16px 0 16px;
+  }
+}

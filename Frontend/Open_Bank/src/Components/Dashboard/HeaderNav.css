@@ -1,0 +1,183 @@
+.hdfc-header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 28px;
+  background-color: transparent;
+  color: #ffffff;
+  gap: 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Brand Logo */
+.hdfc-brand {
+  display: flex;
+  align-items: center;
+}
+
+.hdfc-logo-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #03346e 0%, #021b45 100%);
+  padding: 6px 14px 6px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.hdfc-logo-box:hover {
+  border-color: #38bdf8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+}
+
+.openbank-logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hdfc-brand-text {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+/* Center Search Container */
+.hdfc-search-container {
+  flex: 1;
+  max-width: 580px;
+  margin: 0 16px;
+}
+
+.hdfc-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 2px 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.hdfc-search-wrapper:focus-within {
+  box-shadow: 0 0 0 2px #3b82f6, 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hdfc-search-icon {
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.hdfc-search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 13.5px;
+  color: #1f2937;
+  padding: 8px 0;
+  font-family: inherit;
+}
+
+.hdfc-search-input::placeholder {
+  color: #6b7280;
+  font-size: 13.5px;
+}
+
+/* Right Nav Actions */
+.hdfc-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hdfc-action-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: none;
+  border: none;
+  color: #d1d5db;
+  font-size: 13.5px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.hdfc-action-link:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hdfc-divider {
+  width: 1px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.hdfc-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #d1d5db;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.hdfc-icon-btn:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.hdfc-user-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #111827;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.hdfc-user-avatar:hover {
+  border-color: #ffffff;
+  transform: scale(1.05);
+}
+
+.hdfc-user-avatar span {
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hdfc-header-nav {
+    flex-wrap: wrap;
+    padding: 10px 16px;
+  }
+  .hdfc-search-container {
+    order: 3;
+    max-width: 100%;
+    margin: 8px 0 0 0;
+    width: 100%;
+  }
+}

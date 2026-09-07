@@ -147,7 +147,7 @@ export default function NetBankingLoginForm() {
                     <span className="mini-new-tag">NEW</span>
                   </div>
                   <div className="floating-card-sub">
-                    Scan using your HDFC Bank App secured with Kavach
+                    Scan using your Open Bank App secured with Kavach
                   </div>
                 </div>
               </div>
@@ -246,7 +246,7 @@ export default function NetBankingLoginForm() {
               <div className="mobile-inner-screen">
                 <div className="mobile-top-bar">
                   <div className="mobile-bank-logo">
-                    <span style={{ color: "#ed1c24" }}>■</span> HDFC BANK
+                    <span style={{ color: "#ed1c24" }}>■</span> OPEN BANK
                   </div>
                   <span>10:15</span>
                 </div>
@@ -291,7 +291,7 @@ export default function NetBankingLoginForm() {
           className="know-more-bottom-btn"
           onClick={() =>
             alert(
-              "KAVACH is HDFC Bank's multi-factor passwordless authentication technology.",
+              "KAVACH is Open Bank's multi-factor passwordless authentication technology.",
             )
           }
         >
@@ -310,9 +310,14 @@ export default function NetBankingLoginForm() {
             <div className="made-digital-row">
               <span className="made-digital-label">MADE DIGITAL BY</span>
               <div className="bank-brand-logos">
-                <div className="hdfc-brand-badge">
-                  <div className="hdfc-logo-square"></div>
-                  <span>HDFC BANK</span>
+                <div className="openbank-login-brand-badge">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="24" height="24" rx="6" fill="#0284c7" />
+                    <path d="M12 4.5C7.86 4.5 4.5 7.86 4.5 12C4.5 16.14 7.86 19.5 12 19.5C16.14 19.5 19.5 16.14 19.5 12C19.5 10.8 19.2 9.7 18.65 8.7" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" />
+                    <circle cx="12" cy="12" r="3.2" fill="#38bdf8" stroke="#ffffff" strokeWidth="1.2" />
+                    <circle cx="18.5" cy="5.5" r="2.2" fill="#38bdf8" />
+                  </svg>
+                  <span>OPEN BANK</span>
                 </div>
                 <div className="now-brand-badge">
                   n<span>o</span>w
@@ -347,7 +352,7 @@ export default function NetBankingLoginForm() {
                 <span className="new-green-badge">NEW</span>
               </div>
               <p className="feature-description">
-                Scan using your HDFC Bank App secured with Kavach
+                Scan using your Open Bank App secured with Kavach
               </p>
             </div>
             <div className="feature-arrow-icon">→</div>
@@ -479,7 +484,7 @@ export default function NetBankingLoginForm() {
 
           {/* Footer Legal Links */}
           <footer className="portal-legal-footer">
-            <span>© Copyright HDFC Bank Ltd.</span>
+            <span>© Copyright Open Bank Ltd.</span>
             {footerLinks.map((link, idx) => (
               <React.Fragment key={link}>
                 <span className="footer-bullet-separator">|</span>
@@ -509,7 +514,7 @@ export default function NetBankingLoginForm() {
               ✕
             </button>
             <h3 style={{ margin: "0 0 8px", color: "#0f172a" }}>
-              Scan QR with HDFC Mobile App
+              Scan QR with Open Bank Mobile App
             </h3>
             <p
               style={{ fontSize: "12px", color: "#64748b", margin: "0 0 16px" }}

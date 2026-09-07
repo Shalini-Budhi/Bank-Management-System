@@ -1,0 +1,99 @@
+.hdfc-fav-links-card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 24px 20px 16px 20px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #0f172a;
+}
+
+.hdfc-fav-links-header {
+  margin: 0 0 16px 4px;
+  font-size: 19px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.2px;
+}
+
+.hdfc-fav-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.hdfc-fav-link-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  padding: 11px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.hdfc-fav-link-item:hover {
+  background-color: #f1f5f9;
+}
+
+.hdfc-fav-link-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hdfc-fav-link-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+.hdfc-fav-link-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.hdfc-fav-link-chevron {
+  transition: transform 0.2s ease, stroke 0.2s ease;
+  flex-shrink: 0;
+}
+
+.hdfc-fav-link-item:hover .hdfc-fav-link-chevron {
+  transform: translateX(3px);
+  stroke: #2563eb;
+}
+
+.hdfc-fav-links-footer {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+  text-align: center;
+}
+
+.hdfc-add-edit-btn {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.hdfc-add-edit-btn:hover {
+  color: #1d4ed8;
+  background-color: #eff6ff;
+  text-decoration: underline;
+}

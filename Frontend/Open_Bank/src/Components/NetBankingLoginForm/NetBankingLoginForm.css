@@ -603,6 +603,16 @@
   gap: 14px;
 }
 
+.openbank-login-brand-badge {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0369a1;
+  letter-spacing: 0.5px;
+}
+
 .hdfc-brand-badge {
   display: flex;
   align-items: center;
@@ -611,25 +621,6 @@
   font-weight: 800;
   color: #1e3a8a;
   letter-spacing: 0.5px;
-}
-
-.hdfc-logo-square {
-  width: 18px;
-  height: 18px;
-  background: #004c8f;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 3px;
-}
-
-.hdfc-logo-square::before {
-  content: "";
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: #ed1c24;
 }
 
 .now-brand-badge {
