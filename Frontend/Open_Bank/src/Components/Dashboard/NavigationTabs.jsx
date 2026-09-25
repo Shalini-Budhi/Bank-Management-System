@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useNavigation } from "../../context/NavigationContext";
 import "./NavigationTabs.css";
 
 const defaultTabs = [
@@ -13,28 +14,20 @@ const defaultTabs = [
   { id: "insure", label: "Insure", hasDropdown: false },
 ];
 
-export default function NavigationTabs({
-  tabs = defaultTabs,
-  activeTab = "home",
-  onTabChange,
-}) {
-  const [currentTab, setCurrentTab] = useState(activeTab);
-
-  const handleTabClick = (tabId) => {
-    setCurrentTab(tabId);
-    if (onTabChange) onTabChange(tabId);
-  };
+export default function NavigationTabs({ tabs = defaultTabs }) {
+  /* Read active tab + setter directly from Context — no prop drilling */
+  const { activeNavTab, navigateTo } = useNavigation();
 
   return (
     <nav className="hdfc-nav-bar">
       <ul className="hdfc-nav-list">
         {tabs.map((tab) => {
-          const isActive = currentTab === tab.id;
+          const isActive = activeNavTab === tab.id;
           return (
             <li key={tab.id} className="hdfc-nav-item">
               <button
                 className={`hdfc-nav-link ${isActive ? "active" : ""}`}
-                onClick={() => handleTabClick(tab.id)}
+                onClick={() => navigateTo(tab.id)}
               >
                 <span className="hdfc-nav-text">{tab.label}</span>
                 {tab.hasDropdown && (

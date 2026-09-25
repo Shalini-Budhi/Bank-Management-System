@@ -1,192 +1,567 @@
-.header {
-  padding: 20px;
+/* ─────────────────────────────────────────────────────────────
+   Bills & Recharges (Pay Bills) Page Styles  –  Bills_Recharge.css
+   Matching HDFC NetBanking Pay Bills UI Exactly
+───────────────────────────────────────────────────────────── */
+
+/* Page Wrapper */
+.pbr-page-wrapper {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 20px 24px 32px 24px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+/* ── Page Header Row (Title + Search + CTA) ── */
+.pbr-page-header {
   display: flex;
-  gap: 100px;
-  margin-left: 50px;
-  margin-top: 40px;
-}
-
-.header h3 {
-  color: black;
-  font-family: "Times New Roman", Times, serif;
-}
-
-.search {
-  width: 300px;
-  border-radius: 10px;
-  padding: 8px;
-  border: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  outline: none;
-}
-
-.pay-btn {
-  border-radius: 10px;
-  color: white;
-  background-color: blue;
-  border: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  outline: none;
-}
-
-/* layout */
-.main {
-  display: flex;
+  align-items: center;
   gap: 20px;
-  margin-top: 15px;
-  margin-left: 50px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
 }
 
-.left {
-  flex: 2;
+.pbr-page-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  flex-shrink: 0;
 }
 
-.right {
-  flex: 1;
-   
-}
-
-/* Cards */
-.pay-card {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  width: 710px;
-  height: 400px;
-  margin-left: 15px;
-  color: black;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-.card-header {
+/* Search Bar */
+.pbr-search-bar {
   display: flex;
-  justify-content: space-between;
-}
-
-.quick-card {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  width: 710px;
-  height: 200px;
-  margin-left: 15px;
-  color: black;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.quick-link-card{
-   background: white;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  width: 400px;
-  height: 400px;
-  margin-left: 15px;
-  color: black;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  margin-right: 350px;
-}
-.view-all {
-  color: #093186;
-  cursor: pointer;
-}
-
-.filters {
-  margin: 10px 0;
-}
-
-.filters button {
-  margin-right: 10px;
-  padding: 6px 12px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  background: white;
-}
-
-.filters .active {
-  background: #2b6df8;
-  color: white;
-}
-
-/* BILLS */
-.bills {
-  display: flex;
-  gap: 15px;
-  width: 600px;
-}
-
-.bill-card {
-  background: #f9fafc;
-  padding: 12px;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
   border-radius: 8px;
-  width: 180px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  height: 250px;
+  padding: 0 14px;
+  gap: 8px;
+  width: 280px;
+  height: 38px;
+  flex-shrink: 0;
 }
 
-.recharge-btn {
-  margin-top: 10px;
+.pbr-search-icon {
+  display: flex;
+  align-items: center;
+  color: #6b7280;
+}
+
+.pbr-search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 13px;
+  color: #1e293b;
   width: 100%;
-  padding: 6px;
-  background: white;
-  color: #2b6df8;
+}
+
+.pbr-search-input::placeholder {
+  color: #9ca3af;
+}
+
+/* Pay New Bill Button */
+.pbr-pay-new-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #1d4ed8;
+  color: #ffffff;
   border: none;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-/* ADD CARD */
-.add-card {
-  border: 2px dashed #ccc;
-  padding: 12px;
-  width: 180px;
-  text-align: center;
   border-radius: 8px;
+  padding: 9px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(29, 78, 216, 0.25);
+  transition: background 0.18s ease, transform 0.15s ease;
+  flex-shrink: 0;
 }
 
-/* QUICK LINKS */
-.link-item {
+.pbr-pay-new-btn:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+}
+
+.pbr-plus {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+/* ── Two-Column Main Layout ── */
+.pbr-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+.pbr-left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Base card style */
+.pbr-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.pbr-card-title {
+  margin: 0 0 14px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* ── Quick Recharge Card ── */
+.pbr-quick-recharge-card {
+  padding: 22px 26px;
+}
+
+.pbr-qr-content {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-}
-
-/* RADIO BUTTONS */
-.radio-group {
-  display: flex;
+  align-items: flex-start;
   gap: 20px;
-  margin: 10px 0;
 }
 
-.radio-group input {
-  margin-right: 5px;
-}
-
-.recharge-row {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.recharge-row input {
+.pbr-qr-left {
   flex: 1;
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
 }
 
-.recharge-now {
-  padding: 8px 12px;
-  background: #2b6df8;
-  color: white;
-  border: none;
-  border-radius: 6px;
+.pbr-qr-illustration {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4px;
 }
 
-/* LABEL */
-.label {
+/* Radio Buttons */
+.pbr-radio-group {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.pbr-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Hide native radio */
+.pbr-radio-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Custom radio circle */
+.pbr-radio-custom {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+  display: inline-block;
+  position: relative;
+  flex-shrink: 0;
+  transition: border-color 0.15s;
+  background: #fff;
+}
+
+/* When checked: outer ring + inner fill */
+.pbr-radio-input:checked + .pbr-radio-custom {
+  border-color: #1d4ed8;
+}
+
+.pbr-radio-input:checked + .pbr-radio-custom::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  background: #1d4ed8;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pbr-radio-text {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Input row */
+.pbr-input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pbr-input-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.pbr-input-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pbr-text-input {
+  flex: 1;
+  height: 40px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0 14px;
+  font-size: 13px;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.pbr-text-input:focus {
+  border-color: #1d4ed8;
+}
+
+.pbr-text-input::placeholder {
+  color: #9ca3af;
+}
+
+.pbr-recharge-now-btn {
+  height: 40px;
+  background: #ffffff;
+  color: #1d4ed8;
+  border: 1.5px solid #1d4ed8;
+  border-radius: 8px;
+  padding: 0 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.pbr-recharge-now-btn:hover {
+  background: #eff6ff;
+}
+
+/* ── SmartPay Banner ── */
+.pbr-smartpay-card {
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.pbr-smartpay-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pbr-smartpay-icon {
+  flex-shrink: 0;
+}
+
+.pbr-smartpay-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.pbr-smartpay-title {
   font-size: 14px;
-  margin-top: 10px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.pbr-smartpay-sub {
+  font-size: 12.5px;
+  color: #6b7280;
+}
+
+.pbr-how-link {
+  color: #1d4ed8;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pbr-how-link:hover {
+  text-decoration: underline;
+}
+
+.pbr-smartpay-btn {
+  background: #ffffff;
+  color: #1d4ed8;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.pbr-smartpay-btn:hover {
+  border-color: #1d4ed8;
+  background: #eff6ff;
+}
+
+/* ── Bills and Recharges Card ── */
+.pbr-bills-section-card {
+  padding: 22px 26px;
+}
+
+.pbr-bills-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.pbr-view-all-btn {
+  background: none;
+  border: none;
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.pbr-view-all-btn:hover {
+  text-decoration: underline;
+}
+
+/* Category Pills */
+.pbr-category-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.pbr-pill-btn {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.pbr-pill-btn:hover {
+  border-color: #1d4ed8;
+  color: #1d4ed8;
+}
+
+.pbr-pill-btn.active {
+  background: #1d4ed8;
+  color: #ffffff;
+  border-color: #1d4ed8;
+}
+
+/* Biller Icons Grid */
+.pbr-billers-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.pbr-biller-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 72px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.15s ease;
+}
+
+.pbr-biller-item:hover {
+  transform: translateY(-2px);
+}
+
+.pbr-biller-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e0e7ff;
+  transition: background 0.15s;
+}
+
+.pbr-biller-item:hover .pbr-biller-icon-wrap {
+  background: #e0e7ff;
+}
+
+.pbr-biller-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #374151;
+  text-align: center;
+  white-space: pre-line;
+  line-height: 1.3;
+}
+
+/* ── RIGHT COLUMN: Quick Links ── */
+.pbr-right-column {
+  position: sticky;
+  top: 20px;
+}
+
+.pbr-quick-links-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  padding: 22px 18px;
+}
+
+.pbr-quick-links-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 14px 8px;
+}
+
+.pbr-quick-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pbr-quick-link-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease;
+}
+
+.pbr-quick-link-row:hover {
+  background: #f8fafc;
+}
+
+.pbr-link-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.pbr-link-label {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.pbr-link-chevron {
+  display: flex;
+  align-items: center;
+  transition: transform 0.15s;
+  flex-shrink: 0;
+}
+
+.pbr-quick-link-row:hover .pbr-link-chevron {
+  transform: translateX(3px);
+}
+
+/* ── Footer ── */
+.pbr-footer {
+  margin-top: 48px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.pbr-footer-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.pbr-footer a {
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.pbr-footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.pbr-footer-sep {
+  margin: 0 10px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .pbr-main-grid {
+    grid-template-columns: 1fr;
+  }
+  .pbr-right-column {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .pbr-page-header {
+    flex-wrap: wrap;
+  }
+  .pbr-search-bar {
+    width: 100%;
+  }
+  .pbr-pay-new-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .pbr-qr-illustration {
+    display: none;
+  }
+  .pbr-smartpay-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

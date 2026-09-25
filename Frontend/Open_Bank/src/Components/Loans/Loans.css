@@ -1,88 +1,307 @@
-/* #062441
-#724b05 */
-.loan-header {
-  background: linear-gradient(90deg, #062441, #724b05);
-  color: white;
-  padding: 50px;
-  position: relative;
-  margin-top: 0px;
+/* ─────────────────────────────────────────────────────────────
+   Loans Page Styles  –  Loans.css
+   Matching HDFC NetBanking Loans UI Exactly
+───────────────────────────────────────────────────────────── */
+
+/* Page Wrapper */
+.loans-page-wrapper {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 20px 24px 32px 24px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
 }
-.loan-content {
-  margin-top: -60px;
-}
-.loans-apply {
+
+/* ── Page Header (Loans title + Apply Now) ── */
+.loans-page-header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px;
- 
+  margin-bottom: 24px;
 }
-.loan-apply-btn {
-  background-color: #1b3fc9;
-  padding: 5px 10px;
 
-  border-radius: 7px;
-  color: white;
+.loans-page-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.loans-apply-now-btn {
+  background: #ffffff;
+  color: #1d4ed8;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  padding: 9px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.loans-apply-now-btn:hover {
+  border-color: #1d4ed8;
+  background: #eff6ff;
+}
+
+/* ── Two-Column Main Layout ── */
+.loans-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ── LEFT COLUMN ── */
+.loans-left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.loans-main-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 40px 32px;
+}
+
+/* ── Inner Tabs (Active Loan / Closed Loan) ── */
+.loans-inner-tabs {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 32px;
+}
+
+.loans-inner-tab {
+  background: transparent;
   border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+  padding: 0 4px 12px 4px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.15s;
 }
 
-.active-closed-container {
-  display: flex;
-  gap: 20px;
-  border-bottom: 3px solid #eee;
+.loans-inner-tab:hover,
+.loans-inner-tab.active {
+  color: #004c8f;
 }
-.activeAndClosedloan-button {
+
+.loans-inner-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #004c8f;
+  border-radius: 2px 2px 0 0;
+}
+
+/* ── Empty State ── */
+.loans-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px 24px 32px;
+}
+
+.loans-empty-ill {
+  margin-bottom: 8px;
+}
+
+.loans-empty-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 8px 0 10px;
+}
+
+.loans-empty-sub {
+  font-size: 13.5px;
+  color: #6b7280;
+  max-width: 440px;
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+.loans-empty-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Link Loan — white outline button */
+.loans-link-btn {
+  padding: 10px 28px;
+  background: #ffffff;
+  color: #1d4ed8;
+  border: 1.5px solid #1d4ed8;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.loans-link-btn:hover {
+  background: #eff6ff;
+}
+
+/* Apply for Loan — solid blue button */
+.loans-apply-btn {
+  padding: 10px 28px;
+  background: #1d4ed8;
+  color: #ffffff;
   border: none;
-  background-color: #fff;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(29, 78, 216, 0.25);
+  transition: background 0.15s ease, transform 0.15s ease;
 }
 
-.activeAndClosedloan-button.active {
-  border-bottom: 2px solid blue;
-  color: #1b3fc9;
+.loans-apply-btn:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
 }
-.active-loan-card {
-  border-radius: 12px;
-  margin-top: 20px;
-  border: 1px solid #eee;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+
+/* ── RIGHT COLUMN: Quick Links ── */
+.loans-right-column {
+  position: sticky;
+  top: 20px;
 }
-.active-loan-card-btn-container {
+
+.loans-quick-links-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  padding: 22px 18px;
+}
+
+.loans-quick-links-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 14px 8px;
+}
+
+.loans-quick-links-list {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 2px;
 }
-.active-loan-apply-btn {
-  padding: 5px 25px;
-  background-color: #fff;
-  border-radius: 7px;
-  color: #1b3fc9;
-  border: 2px solid #1b3fc9;
-}
-.active-loan-apply-btn:hover {
-  color: white;
-  background-color: #1b3fc9;
-}
-.quick-links-container {
-  background-color: #eee;
-}
-.quick-link-item {
+
+.loans-quick-link-row {
+  width: 100%;
   display: flex;
-  gap: 5px;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease;
+}
+
+.loans-quick-link-row:hover {
+  background: #f8fafc;
+}
+
+.loans-link-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.loans-link-label {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.loans-link-chevron {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: transform 0.15s;
+}
+
+.loans-quick-link-row:hover .loans-link-chevron {
+  transform: translateX(3px);
+}
+
+/* ── Footer ── */
+.loans-footer {
+  margin-top: 48px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  text-align: center;
-  margin: 15px;
-}
-.quick-link-title {
-  margin-bottom: 0px;
-}
-.quick-link-image-and-text {
-  display: flex;
-  gap: 5px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
 }
 
-.card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  border: 1px solid #eee;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+.loans-footer-links {
+  display: flex;
+  align-items: center;
+}
+
+.loans-footer a {
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.loans-footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.loans-footer-sep {
+  margin: 0 10px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .loans-main-grid {
+    grid-template-columns: 1fr;
+  }
+  .loans-right-column {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .loans-page-header {
+    gap: 12px;
+  }
+  .loans-apply-now-btn {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+  .loans-empty-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .loans-link-btn,
+  .loans-apply-btn {
+    width: 100%;
+    text-align: center;
+  }
 }

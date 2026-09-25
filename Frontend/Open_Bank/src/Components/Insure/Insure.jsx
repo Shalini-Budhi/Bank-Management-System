@@ -1,14 +1,15 @@
 import React, { useState } from "react";
+import { useNavigation } from "../../context/NavigationContext";
 import "./Insure.css";
 
-import mediclaim from "../../Images/Mediclaim.jpg";
-import protectlife from "../../Images/ProtectLife.png";
-import instantinsurance from "../../Images/InstantInsurance.png";
-import socialsecurity from "../../Images/SocialSecurity.jpg";
-import vehicle from "../../Images/vehicle.jpg";
-import travel from "../../Images/Travel.jpg";
+import mediclaimImg from "../../Images/Mediclaim.jpg";
+import protectLifeImg from "../../Images/ProtectLife.png";
+import instantInsImg from "../../Images/InstantInsurance.png";
+import socialSecImg from "../../Images/SocialSecurity.jpg";
+import vehicleImg from "../../Images/vehicle.jpg";
+import travelImg from "../../Images/Travel.jpg";
 
-const categories = [
+const CATEGORIES = [
   "All Insurances",
   "Life Insurance",
   "Health & Accident",
@@ -18,35 +19,33 @@ const categories = [
   "Travel",
 ];
 
-// Cards Data
-const insureData = [
+const INSURE_CARDS = [
   {
     id: 1,
     title: "Mediclaim",
     category: "Health & Accident",
-    image: mediclaim,
+    image: mediclaimImg,
     points: [
       "Covers hospitalisation, day-care, and pre/post-treatment expenses.",
-      "Includes AYUSH treatments and cashless benefits.",
-      "Stay protected during medical emergencies.",
+      "Includes AYUSH treatments and cashless hospitalisation benefits.",
+      "Stay protected during medical emergencies without financial stress.",
     ],
   },
   {
     id: 2,
     title: "Protect Life & Grow Wealth",
     category: "Life Insurance",
-    image: protectlife,
+    image: protectLifeImg,
     points: [
-      "Plan your financial goals with savings options.",
-      "Protect your family from uncertainties.",
-      "Based on life stage and income.",
+      "Plan your financial goals with a range of savings options with life cover.",
+      "Protect yourself and your family from life's uncertainties with HDFC Bank's wide range of Life Insurance products - based on your life stage, your requirement, and your inve...",
     ],
   },
   {
     id: 3,
     title: "Instant Insurance",
     category: "Instant Insurance",
-    image: instantinsurance,
+    image: instantInsImg,
     points: [
       "Instant Policy Issuance.",
       "No Documentation & No Medicals.",
@@ -57,106 +56,210 @@ const insureData = [
     id: 4,
     title: "Social Security Schemes",
     category: "Social Security Schemes",
-    image: socialsecurity,
+    image: socialSecImg,
     points: [
-      "Instant Policy Issuance.",
-      "No Documentation & No Medicals.",
-      "Short & Quick Journey.",
+      "PMJJBY – Life cover at just ₹436/year.",
+      "PMSBY – Accident cover at ₹20/year.",
+      "APY – Pension scheme for unorganised sector.",
     ],
   },
   {
     id: 5,
-    title: "Vehicle",
+    title: "Vehicle Insurance",
     category: "Vehicle",
-    image: vehicle,
+    image: vehicleImg,
     points: [
-      "Instant Policy Issuance.",
-      "No Documentation & No Medicals.",
-      "Short & Quick Journey.",
+      "Covers third-party liabilities.",
+      "Own-damage & theft protection.",
+      "Cashless claims at network garages.",
     ],
   },
   {
     id: 6,
-    title: "Travel",
+    title: "Travel Insurance",
     category: "Travel",
-    image: travel,
+    image: travelImg,
     points: [
-      "Instant Policy Issuance.",
-      "No Documentation & No Medicals.",
-      "Short & Quick Journey.",
+      "Trip cancellation & delay coverage.",
+      "Medical emergency abroad.",
+      "Lost baggage & passport assistance.",
     ],
   },
 ];
 
-function Insure() {
-  const [activeTab, setActiveTab] = useState("All Insurances");
-  const [mainTab, setMainTab] = useState("Purchase Policy");
+const INITIAL_POLICIES = [
+  {
+    id: "POL-2024-HLT-001",
+    name: "Mediclaim Policy",
+    type: "Health & Accident",
+    premium: "₹ 4,999 / yr",
+    renewalDate: "15 Jan 2025",
+    status: "Active",
+    statusColor: "#16a34a",
+  },
+  {
+    id: "POL-2023-VEH-045",
+    name: "Vehicle Insurance",
+    type: "Vehicle",
+    premium: "₹ 3,200 / yr",
+    renewalDate: "30 Mar 2025",
+    status: "Active",
+    statusColor: "#16a34a",
+  },
+  {
+    id: "POL-2022-LFE-012",
+    name: "Term Life Plan",
+    type: "Life Insurance",
+    premium: "₹ 9,999 / yr",
+    renewalDate: "01 Apr 2025",
+    status: "Renewal Due",
+    statusColor: "#ea580c",
+  },
+];
 
-  const filteredData =
-    activeTab === "All Insurances"
-      ? insureData
-      : insureData.filter((item) => item.category === activeTab);
+export default function Insure() {
+  const { navigateTo } = useNavigation();
+  const [mainTab, setMainTab] = useState("purchase"); // "purchase" | "active"
+  const [activeCategory, setActiveCategory] = useState("All Insurances");
+  const [activePolicies, setActivePolicies] = useState(INITIAL_POLICIES);
+
+  // Filter cards based on selected category
+  const filteredCards = INSURE_CARDS.filter(
+    (card) => activeCategory === "All Insurances" || card.category === activeCategory
+  );
+
+  const handleExplore = (card) => {
+    alert(`📋 Exploring "${card.title}" insurance policy options...`);
+  };
+
+  const handleRenewClick = () => {
+    setMainTab("active");
+  };
 
   return (
-    <div className="insurance-container">
-      {/* HEADER */}
-      <div className="insurance-header">
-        <h2>Insurance</h2>
-        <button className="renew-btn">Renew Policy</button>
-      </div>
+    <div className="ins-page-container">
+      <div className="ins-main-card">
+        {/* ── TOP HEADER ── */}
+        <div className="ins-header">
+          <h1 className="ins-title">Insurance</h1>
+          <div className="ins-header-right">
+            <button className="ins-renew-btn" onClick={handleRenewClick}>
+              Renew Policy
+            </button>
+            <button className="ins-back-btn" onClick={() => navigateTo("home")}>
+              ← Dashboard
+            </button>
+          </div>
+        </div>
 
-      {/* TABS */}
-      <div className="main-tabs">
-        <span
-          className={mainTab === "Purchase Policy" ? "active-main" : ""}
-          onClick={() => setMainTab("Purchase Policy")}
-        >
-          Purchase Policy
-        </span>
-
-        <span
-          className={mainTab === "Active Policies" ? "active-main" : ""}
-          onClick={() => setMainTab("Active Policies")}
-        >
-          Active Policies
-        </span>
-      </div>
-
-      {/* CATEGORY */}
-      <div className="tabs">
-        {categories.map((tab, index) => (
+        {/* ── MAIN TABS (Purchase Policy | Active Policies) ── */}
+        <div className="ins-main-tabs">
           <button
-            key={index}
-            className={`tab-btn ${activeTab === tab ? "active" : ""}`}
-            onClick={() => setActiveTab(tab)}
+            className={`ins-main-tab ${mainTab === "purchase" ? "ins-main-tab--active" : ""}`}
+            onClick={() => setMainTab("purchase")}
           >
-            {tab}
+            Purchase Policy
           </button>
-        ))}
-      </div>
+          <button
+            className={`ins-main-tab ${mainTab === "active" ? "ins-main-tab--active" : ""}`}
+            onClick={() => setMainTab("active")}
+          >
+            Active Policies
+            <span className="ins-tab-badge">{activePolicies.length}</span>
+          </button>
+        </div>
 
-    {/* Cards */}
-      <div className="card-grid">
-        {filteredData.map((item) => (
-          <div className="card" key={item.id}>
-            <img src={item.image} alt={item.title} />
-
-            <div className="card-content">
-              <h3>{item.title}</h3>
-
-              <ul>
-                {item.points.map((point, i) => (
-                  <li key={i}>{point}</li>
+        {/* ════════════════════════════════════════════════════
+            PURCHASE POLICY TAB
+        ════════════════════════════════════════════════════ */}
+        {mainTab === "purchase" && (
+          <>
+            {/* CATEGORY PILLS BAR */}
+            <div className="ins-category-pills-wrap">
+              <div className="ins-category-pills">
+                {CATEGORIES.map((cat, idx) => (
+                  <button
+                    key={idx}
+                    className={`ins-pill ${activeCategory === cat ? "ins-pill--active" : ""}`}
+                    onClick={() => setActiveCategory(cat)}
+                  >
+                    {cat}
+                  </button>
                 ))}
-              </ul>
+              </div>
+              <button className="ins-pill-scroll-btn" title="Scroll right">
+                ›
+              </button>
+            </div>
 
-              <button className="explore-btn">Explore</button>
+            {/* PRODUCT CARDS GRID (3 Columns per row) */}
+            <div className="ins-cards-grid">
+              {filteredCards.map((card) => (
+                <div key={card.id} className="ins-card">
+                  {/* Image Header */}
+                  <div className="ins-card-img-container">
+                    <img src={card.image} alt={card.title} className="ins-card-img" />
+                  </div>
+
+                  {/* Card Content Body */}
+                  <div className="ins-card-content">
+                    <h3 className="ins-card-title">{card.title}</h3>
+                    <ul className="ins-card-bullets">
+                      {card.points.map((pt, i) => (
+                        <li key={i}>{pt}</li>
+                      ))}
+                    </ul>
+
+                    {/* Explore Full Width Button */}
+                    <button
+                      className="ins-explore-btn"
+                      onClick={() => handleExplore(card)}
+                    >
+                      Explore
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+
+        {/* ════════════════════════════════════════════════════
+            ACTIVE POLICIES TAB
+        ════════════════════════════════════════════════════ */}
+        {mainTab === "active" && (
+          <div className="ins-active-policies-section">
+            <h3 className="ins-section-title">Your Active Insurance Policies</h3>
+            <div className="ins-policies-list">
+              {activePolicies.map((pol) => (
+                <div key={pol.id} className="ins-policy-row">
+                  <div className="ins-policy-info">
+                    <span className="ins-policy-id">{pol.id}</span>
+                    <h4 className="ins-policy-name">{pol.name}</h4>
+                    <span className="ins-policy-type">{pol.type}</span>
+                  </div>
+                  <div className="ins-policy-meta">
+                    <span className="ins-policy-status" style={{ color: pol.statusColor }}>
+                      ● {pol.status}
+                    </span>
+                    <span className="ins-policy-premium">{pol.premium}</span>
+                    <span className="ins-policy-renewal">Renewal: {pol.renewalDate}</span>
+                  </div>
+                  <div className="ins-policy-actions">
+                    <button
+                      className="ins-renew-now-btn"
+                      onClick={() => alert(`Renewing policy ${pol.id}...`)}
+                    >
+                      Renew Now
+                    </button>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
+        )}
+
       </div>
     </div>
   );
 }
-
-export default Insure;

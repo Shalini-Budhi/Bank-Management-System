@@ -8,6 +8,7 @@ import NetBankingLoginForm from "./Components/NetBankingLoginForm/NetBankingLogi
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Bills_Recharge from "./Components/Bills_Recharge/Bills_Recharge";
 import Insure from "./Components/Insure/Insure";
+import Invest from "./Components/Invest/Invest";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/finance" element={<SimplyFinanance />} />
       <Route path="/billsrecharge" element={<Bills_Recharge />} />
       <Route path="/insure" element={<Insure />} />
+      <Route path="/invest" element={<Invest />} />
     </Routes>
   );
 }

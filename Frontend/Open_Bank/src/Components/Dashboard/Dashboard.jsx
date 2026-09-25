@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useNavigation } from "../../context/NavigationContext";
 import HeaderNav from "./HeaderNav";
 import NavigationTabs from "./NavigationTabs";
 import GreetingSection from "./GreetingSection";
@@ -7,37 +8,21 @@ import CategoryTabs from "./CategoryTabs";
 import ProductCardsSection from "./ProductCardsSection";
 import FavouriteLinksCard from "./FavouriteLinksCard";
 import SendMoneyWidget from "./SendMoneyWidget";
+import Accounts from "../Accounts/Accounts";
+import SendMoney from "../SendMoney/SendMoney";
+import MyCards from "../Cards/MyCards";
+import Fd_Rd from "../Fd_Rd/Fd_Rd";
+import Bills_Recharge from "../Bills_Recharge/Bills_Recharge";
+import Loans from "../Loans/Loans";
+import Insure from "../Insure/Insure";
+import Invest from "../Invest/Invest";
 import "./Dashboard.css";
 
 export default function Dashboard() {
   const navigate = useNavigate();
+  const { activeNavTab, navigateTo, userName, userInitials, lastLoginTime } = useNavigation();
 
-  // Retrieve user name from storage if available, otherwise default to "Mannem Vamsi Krishna"
-  const [userName, setUserName] = useState("Mannem Vamsi Krishna");
-  const [userInitials, setUserInitials] = useState("MK");
-  const [activeNavTab, setActiveNavTab] = useState("home");
   const [activeCategory, setActiveCategory] = useState("accounts");
-  const [lastLoginTime, setLastLoginTime] = useState("13/08/26, 07:55 PM");
-
-  useEffect(() => {
-    const storedUser = localStorage.getItem("userName");
-    if (storedUser) {
-      // If email or name stored
-      const cleanName = storedUser.includes("@")
-        ? storedUser.split("@")[0].replace(/[^a-zA-Z0-9 ]/g, " ")
-        : storedUser;
-      
-      if (cleanName.trim()) {
-        setUserName(cleanName);
-        const parts = cleanName.trim().split(" ");
-        if (parts.length >= 2) {
-          setUserInitials((parts[0][0] + parts[1][0]).toUpperCase());
-        } else {
-          setUserInitials(cleanName.substring(0, 2).toUpperCase());
-        }
-      }
-    }
-  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("userName");
@@ -55,6 +40,63 @@ export default function Dashboard() {
 
   const handleTransferProceed = (data) => {
     alert(`Transfer of ₹${data.amount} to '${data.toAccount}' from '${data.fromAccount}' (${data.transferType}) is submitted for processing!`);
+  };
+
+  /* ── Render the correct page based on active nav tab ── */
+  const renderContent = () => {
+    switch (activeNavTab) {
+      case "accounts":
+        return <Accounts />;
+      case "send-money":
+        return <SendMoney />;
+      case "cards":
+        return <MyCards />;
+      case "fdrd":
+        return <Fd_Rd />;
+      case "bills":
+        return <Bills_Recharge />;
+      case "loans":
+        return <Loans />;
+      case "insure":
+        return <Insure />;
+      case "invest":
+        return <Invest />;
+      default:
+        return (
+          <>
+            {/* User Greeting and Special Offers Banner */}
+            <GreetingSection
+              userName={userName}
+              lastLogin={lastLoginTime}
+              onSpecialOffersClick={handleSpecialOffers}
+            />
+
+            {/* Category Switcher Pills */}
+            <CategoryTabs
+              activeCategory={activeCategory}
+              onCategoryChange={(catId) => setActiveCategory(catId)}
+            />
+
+            {/* Main Content Grid (Products Left + Favourite Links Right) */}
+            <div className="hdfc-dashboard-grid">
+              <section className="hdfc-grid-left">
+                <ProductCardsSection
+                  accountCount={2}
+                  actualBalance="₹ 2,45,850.00"
+                />
+              </section>
+              <aside className="hdfc-grid-right">
+                <FavouriteLinksCard />
+              </aside>
+            </div>
+
+            {/* Bottom Section: Send Money Widget */}
+            <section className="hdfc-bottom-section">
+              <SendMoneyWidget onProceedTransfer={handleTransferProceed} />
+            </section>
+          </>
+        );
+    }
   };
 
   return (
@@ -102,47 +144,12 @@ export default function Dashboard() {
         onSearch={handleSearch}
       />
 
-      {/* Primary Horizontal Navigation Tabs */}
-      <NavigationTabs
-        activeTab={activeNavTab}
-        onTabChange={(tabId) => setActiveNavTab(tabId)}
-      />
+      {/* Primary Horizontal Navigation Tabs — driven by Context */}
+      <NavigationTabs />
 
       {/* Main Dashboard Content Area */}
       <main className="hdfc-main-content">
-        {/* User Greeting and Special Offers Banner */}
-        <GreetingSection
-          userName={userName}
-          lastLogin={lastLoginTime}
-          onSpecialOffersClick={handleSpecialOffers}
-        />
-
-        {/* Category Switcher Pills */}
-        <CategoryTabs
-          activeCategory={activeCategory}
-          onCategoryChange={(catId) => setActiveCategory(catId)}
-        />
-
-        {/* Main Content Grid (Products Left + Favourite Links Right) */}
-        <div className="hdfc-dashboard-grid">
-          {/* Left Column: Product & Account Cards */}
-          <section className="hdfc-grid-left">
-            <ProductCardsSection
-              accountCount={2}
-              actualBalance="₹ 2,45,850.00"
-            />
-          </section>
-
-          {/* Right Column: Favourite Links */}
-          <aside className="hdfc-grid-right">
-            <FavouriteLinksCard />
-          </aside>
-        </div>
-
-        {/* Bottom Section: Send Money Widget */}
-        <section className="hdfc-bottom-section">
-          <SendMoneyWidget onProceedTransfer={handleTransferProceed} />
-        </section>
+        {renderContent()}
       </main>
     </div>
   );

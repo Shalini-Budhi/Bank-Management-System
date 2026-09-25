@@ -1,132 +1,378 @@
-.top-section{
-  background: linear-gradient(to right, #0f2a3d, #c58b00);
-    height: 150px;
-    color: white;
-    padding: 30px;
+/* ────────────────────────────────────────────
+   Send Money Page  –  SendMoney.css
+──────────────────────────────────────────── */
+
+.sm-page {
+  padding: 28px 32px 48px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f0f4f8;
+  min-height: calc(100vh - 120px);
 }
 
-.main-section{
-    background-color: #f5f7fa;
-    padding: 20px;
-
+.sm-page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0d1b2a;
+  margin: 0 0 22px;
+  letter-spacing: -0.3px;
 }
 
-.gap-style{
-    gap:20px;
-}
-.cards-wrapper{
-        margin-top: -80px;  
-
-}
-.card1{    
-    border-radius: 10px;
-    width: 600px;
-    height: 350px;      
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-        background-color: white;
-
+/* ── Two-column layout ── */
+.sm-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
 }
 
-.card2{
-    border-radius: 10px;
-    width: 400px;
-    height: 350px;
-        background-color: white;
-
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+/* ── LEFT COLUMN ── */
+.sm-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.heading{
-    padding-top: 10px;
-}
-input{
-    width: 500px;
-    padding: 10px;
-}
-.search-box {
-  position: relative;
-  width: 100%;
+/* ── White card ── */
+.sm-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  padding: 26px 28px 22px;
 }
 
-.search-box input {
-  width: 100%;
-  padding: 15px; 
-  border: 1px solid #ccc;
-  border-radius: 5px;
+/* ── To label ── */
+.sm-to-label {
   font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 10px;
+  letter-spacing: 0.2px;
 }
 
-.search-icon {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: gray;
+/* ── Search box ── */
+.sm-search-box {
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.sm-search-box:focus-within {
+  border-color: #1565c0;
+  box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.1);
+}
+
+.sm-search-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  outline: none;
+  font-size: 13.5px;
+  color: #374151;
+  background: transparent;
+  font-family: inherit;
+}
+
+.sm-search-input::placeholder {
+  color: #9ca3af;
+}
+
+/* ── Sub link ── */
+.sm-accounts-link {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 9px 0 18px;
+}
+
+/* ── Favourite section ── */
+.sm-fav-section {
+  margin-bottom: 20px;
+}
+
+.sm-fav-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 14px;
+}
+
+.sm-fav-add-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  gap: 6px;
+}
+
+.sm-add-fav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px dashed #93c5fd;
+  background: #eff6ff;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
 }
-.paragraph{
-    font-size: 12px;
-    padding-top: 5px;
-}
-.add-button{
-    padding: 10px;
-    border-radius: 60%;
-    border: 1px dashed #0384fc;
-    margin-left: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
-   
 
+.sm-add-fav-btn:hover {
+  background: #dbeafe;
+  border-color: #3b82f6;
 }
-.buttons-container{
-    gap: 30px;
-    display: flex;
-    padding: 10px;
 
+.sm-add-fav-plus {
+  font-size: 22px;
+  line-height: 1;
+  color: #1565c0;
+  font-weight: 300;
 }
-.add-payee-button{
-    color: #0384fc;
-    background-color: white;
-    border: 1px solid #0384fc;
-    border-radius: 5px;
-    padding: 10px;
-    width: 100px;
-    font-size: 12px;
-      
-}
-.view-payees-button{
-    color: #0384fc;
-    background-color: white;
-    border: 1px solid white;
-    border-radius: 5px;
-    font-size: 12px;
-    padding: 10px;
 
+.sm-add-fav-label {
+  font-size: 12px;
+  color: #1565c0;
+  font-weight: 500;
+  margin: 0;
 }
-.inner-links{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-}
-.arrow-symbol{
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    color: #0384fc;
-}
-.icons{
-    color: #0384fc;
 
+/* ── Divider ── */
+.sm-card-divider {
+  height: 1px;
+  background: #f0f0f0;
+  margin: 0 0 18px;
 }
-.inner-card{
-    background-color: white;    
-    border-radius: 10px;
- 
-   
+
+/* ── Bottom buttons ── */
+.sm-bottom-btns {
+  display: flex;
+  gap: 12px;
 }
-.left-content{
-    display: flex;
-    align-items: center;
-    gap: 10px;  /* small gap between icon & text */
+
+.sm-btn {
+  padding: 9px 24px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.sm-btn-outline {
+  border: 1.5px solid #1565c0;
+  background: transparent;
+  color: #1565c0;
+}
+
+.sm-btn-outline:hover {
+  background: #eff6ff;
+}
+
+.sm-btn-ghost {
+  border: 1.5px solid #d1d5db;
+  background: transparent;
+  color: #374151;
+}
+
+.sm-btn-ghost:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+/* ── One Time Transfer card ── */
+.sm-one-time-card {
+  background: #f0f6ff;
+  border: 1px solid #dbeafe;
+}
+
+.sm-ott-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.sm-ott-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0d1b2a;
+  margin: 0;
+}
+
+.sm-ott-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #22c55e;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+.sm-ott-desc {
+  font-size: 12.5px;
+  color: #4b5563;
+  margin: 0 0 18px;
+  line-height: 1.5;
+}
+
+.sm-ott-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.sm-ott-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: #ffffff;
+  border: 1.5px solid #dbeafe;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.sm-ott-option:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 4px 14px rgba(21, 101, 192, 0.1);
+}
+
+.sm-ott-option--active {
+  border-color: #1565c0;
+  background: #eff6ff;
+  box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.12);
+}
+
+.sm-ott-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: #dbeafe;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.sm-ott-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sm-ott-opt-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #0d1b2a;
+}
+
+.sm-ott-opt-sub {
+  font-size: 11.5px;
+  color: #6b7280;
+}
+
+/* ── RIGHT COLUMN ── */
+.sm-right-col {
+  position: sticky;
+  top: 20px;
+}
+
+/* ── Quick Links Card ── */
+.sm-ql-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+}
+
+.sm-ql-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0d1b2a;
+  padding: 18px 20px 12px;
+  margin: 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.sm-ql-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.sm-ql-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border-bottom: 1px solid #f4f6f9;
+  transition: background 0.18s;
+  font-family: inherit;
+}
+
+.sm-ql-row:last-child {
+  border-bottom: none;
+}
+
+.sm-ql-row:hover {
+  background: #f0f6ff;
+}
+
+.sm-ql-icon {
+  color: #5b7fa6;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.sm-ql-label {
+  flex: 1;
+  font-size: 13px;
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.sm-ql-arrow {
+  color: #9badc8;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+
+.sm-ql-row:hover .sm-ql-arrow {
+  color: #1565c0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .sm-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sm-right-col {
+    position: static;
+  }
+
+  .sm-page {
+    padding: 20px 16px 40px;
+  }
+}
+
+@media (max-width: 560px) {
+  .sm-ott-options {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,0 +1,687 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   INVESTMENT MODULE STYLING
+   Matches HDFC NetBanking Invest module screenshots exactly
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.inv-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── HERO TOP HEADER (Dark Blue Theme) ── */
+.inv-hero-header {
+  background: linear-gradient(180deg, #061733 0%, #0a2540 100%);
+  padding: 24px 32px 0 32px;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.inv-hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.inv-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.inv-subtitle {
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 4px 0 0 0;
+}
+
+.inv-dashboard-btn {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: all 0.2s ease;
+}
+
+.inv-dashboard-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #ffffff;
+}
+
+/* ── SUB-TABS BAR ── */
+.inv-sub-tabs {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.inv-sub-tab {
+  padding: 10px 4px 12px 4px;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #94a3b8;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.inv-sub-tab:hover {
+  color: #e2e8f0;
+}
+
+.inv-sub-tab--active {
+  color: #ffffff;
+}
+
+.inv-sub-tab--active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 3px 3px 0 0;
+}
+
+/* ── CONTENT WRAPPER ── */
+.inv-content-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 28px auto;
+  padding: 0 24px;
+  flex: 1;
+}
+
+/* Grid Layout for Left Card + Right Sidebar */
+.inv-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+.inv-single-card-layout {
+  max-width: 780px;
+}
+
+/* Base Card Style */
+.inv-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+/* ── 1. DEMAT TAB STYLES ── */
+.inv-demat-banner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, #4cd99b 0%, #34c787 100%);
+  border-radius: 12px;
+  padding: 24px;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(52, 199, 135, 0.25);
+}
+
+.inv-banner-illustration {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.inv-banner-text {
+  flex: 1;
+}
+
+.inv-banner-text h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  color: #ffffff;
+}
+
+.inv-banner-text p {
+  font-size: 13px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+}
+
+.inv-apply-btn {
+  padding: 10px 24px;
+  background: #1e3a8a;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.inv-apply-btn:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+}
+
+/* ── RIGHT COLUMN: QUICK LINKS ── */
+.inv-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inv-quick-links-card {
+  padding: 20px;
+}
+
+.inv-card-header {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 16px 0;
+}
+
+.inv-link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.inv-link-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 13px;
+  font-weight: 500;
+  color: #334155;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.inv-link-list li:last-child {
+  border-bottom: none;
+}
+
+.inv-link-list li:hover {
+  color: #1d4ed8;
+}
+
+.inv-link-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.inv-icon {
+  font-size: 15px;
+}
+
+.inv-chevron {
+  font-size: 16px;
+  color: #94a3b8;
+  font-weight: bold;
+}
+
+/* ── HDFC SKY PURPLE BANNER ── */
+.inv-sky-banner {
+  background: linear-gradient(135deg, #6366f1 0%, #7c3aed 100%);
+  border-radius: 14px;
+  padding: 24px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.2);
+}
+
+.inv-sky-icon {
+  width: 42px;
+  height: 42px;
+  background: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inv-ipo-badge-text {
+  font-size: 13px;
+  font-weight: 800;
+  color: #6366f1;
+}
+
+.inv-sky-tag {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.inv-sky-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  line-height: 1.35;
+}
+
+.inv-sky-outline-btn {
+  width: 100%;
+  padding: 10px 16px;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.inv-sky-outline-btn:hover {
+  background: #ffffff;
+  color: #6366f1;
+}
+
+/* ── 2. MUTUAL FUNDS STYLES ── */
+.inv-mf-card {
+  padding: 32px;
+}
+
+.inv-mf-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.inv-mf-info h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+}
+
+.inv-mf-info p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0 0 20px 0;
+}
+
+.inv-btn-primary {
+  padding: 10px 24px;
+  background: #1d4ed8;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.inv-btn-primary:hover {
+  background: #1e40af;
+}
+
+.inv-mf-graphic {
+  position: relative;
+}
+
+.inv-id-badge {
+  width: 80px;
+  height: 90px;
+  background: #eff6ff;
+  border: 2px solid #bfdbfe;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.inv-badge-avatar {
+  font-size: 24px;
+}
+
+.inv-badge-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 50px;
+}
+
+.inv-line-long {
+  height: 4px;
+  background: #93c5fd;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.inv-line-short {
+  height: 4px;
+  background: #93c5fd;
+  border-radius: 2px;
+  width: 60%;
+}
+
+.inv-disclaimer {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 16px;
+  line-height: 1.5;
+}
+
+/* ── 3. RBI BONDS STYLES ── */
+.inv-rbi-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+}
+
+.inv-rbi-left h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+}
+
+.inv-rbi-subtitle {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0 0 20px 0;
+}
+
+.inv-rbi-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+  margin-bottom: 24px;
+}
+
+.inv-rbi-item {
+  font-size: 13px;
+  color: #334155;
+}
+
+.inv-money-bag-illustration {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  background: #e0f2fe;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inv-bag-shape {
+  width: 65px;
+  height: 70px;
+  background: #0284c7;
+  border-radius: 16px 16px 24px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3);
+}
+
+.inv-lock-icon {
+  font-size: 20px;
+}
+
+.inv-coin {
+  position: absolute;
+  font-size: 18px;
+}
+
+.inv-coin-1 {
+  top: 10px;
+  left: 8px;
+}
+
+.inv-coin-2 {
+  bottom: 10px;
+  right: 8px;
+}
+
+/* ── 4. IPO THROUGH ASBA STYLES ── */
+.inv-ipo-card h2 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 20px 0;
+}
+
+.inv-form-group {
+  margin-bottom: 20px;
+}
+
+.inv-form-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.inv-select {
+  width: 100%;
+  padding: 10px 14px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.inv-select:focus {
+  border-color: #1d4ed8;
+}
+
+.inv-account-selector-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.inv-acc-type {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.inv-acc-num {
+  font-size: 13px;
+  color: #64748b;
+  margin-left: 6px;
+}
+
+.inv-acc-holder {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  margin-top: 4px;
+  letter-spacing: 0.3px;
+}
+
+.inv-acc-bal-wrap {
+  text-align: right;
+}
+
+.inv-acc-bal {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.inv-acc-bal-label {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.inv-info-text {
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 24px;
+}
+
+.inv-info-text a {
+  color: #1d4ed8;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.inv-action-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+
+.inv-btn-text {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d4ed8;
+  cursor: pointer;
+}
+
+.inv-btn-text:hover {
+  text-decoration: underline;
+}
+
+/* ── 5. NPS STYLES ── */
+.inv-nps-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 32px;
+}
+
+.inv-nps-left {
+  flex: 1;
+  padding-right: 24px;
+}
+
+.inv-nps-left h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 10px 0;
+}
+
+.inv-nps-desc {
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.inv-nps-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.inv-btn-link {
+  background: none;
+  border: none;
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.inv-btn-link:hover {
+  text-decoration: underline;
+}
+
+.inv-btn-outline {
+  padding: 8px 18px;
+  background: #ffffff;
+  border: 1px solid #1d4ed8;
+  color: #1d4ed8;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.inv-btn-outline:hover {
+  background: #eff6ff;
+}
+
+/* ── FOOTER ── */
+.inv-footer {
+  margin-top: auto;
+  padding: 20px 32px;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.inv-footer-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.inv-footer-links a {
+  color: #64748b;
+  text-decoration: none;
+}
+
+.inv-footer-links a:hover {
+  color: #0f172a;
+}
+
+.inv-footer-sep {
+  color: #cbd5e1;
+}

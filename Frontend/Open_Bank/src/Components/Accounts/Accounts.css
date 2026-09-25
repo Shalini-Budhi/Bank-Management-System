@@ -1,35 +1,387 @@
-.account_grid_data{
+/* ────────────────────────────────────────────
+   Accounts Page  –  Accounts.css
+──────────────────────────────────────────── */
+
+/* Page wrapper */
+.acct-page {
+  padding: 28px 32px 48px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f0f4f8;
+  min-height: calc(100vh - 120px);
+}
+
+.acct-page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0d1b2a;
+  margin: 0 0 22px;
+  letter-spacing: -0.3px;
+}
+
+/* Two-column layout */
+.acct-layout {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
 }
 
-.quickLink_img_icon{
-  margin-right: 10px;
-  color: rgb(148, 138, 240);
-}
-
-
-.quickLink_name{
-  color: black;
-  text-decoration: none;
-}
-
-.arrow_forward_icon{
-  margin-left: 30px;
-  color: rgb(99, 99, 235);
-}
-
-
-.card_content_accounts_data{
-  border-style: none;
-  border: 1px solid black;
-  gap: 20px;
+/* ── LEFT COLUMN ── */
+.acct-left-col {
   display: flex;
-  background: #f4f2f2;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Main white card */
+.acct-main-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 28px 28px 8px;
+  overflow: hidden;
+}
+
+/* Total balance */
+.acct-total-balance-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   margin-bottom: 20px;
 }
 
-.main_customs_card{
-  background: #ebe9e9 !important;
-  padding: 50px;
+.acct-total-label {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.acct-total-amount {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0d1b2a;
+  letter-spacing: -0.5px;
+}
+
+.acct-cards-divider {
+  height: 1px;
+  background: #f0f0f0;
+  margin: 0 0 16px;
+}
+
+/* Account list */
+.acct-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Single account card row */
+.acct-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  background: #f8fafd;
+  border: 1px solid #e8edf4;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.acct-card:hover {
+  box-shadow: 0 4px 18px rgba(30,100,200,0.10);
+  border-color: #c5d8f0;
+}
+
+.acct-card-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+}
+
+.acct-icon-wrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* No extra background — SVG handles it */
+  border-radius: 10px;
+  overflow: hidden;
+  width: 44px;
+  height: 44px;
+}
+
+.acct-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.acct-type-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.acct-type-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1565c0;
+}
+
+.acct-masked-num {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #1565c0;
+  letter-spacing: 0.5px;
+}
+
+.acct-edit-btn {
+  background: none;
+  border: none;
+  color: #90a4c8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+
+.acct-edit-btn:hover {
+  color: #1565c0;
+}
+
+.acct-holder-name {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* Right side: balance */
+.acct-card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  min-width: 140px;
+}
+
+.acct-balance {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #0d1b2a;
+}
+
+.acct-balance-label-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.acct-balance-label {
+  font-size: 11.5px;
+  color: #6b7280;
+}
+
+.acct-eye-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #90a4c8;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  transition: color 0.15s;
+}
+
+.acct-eye-btn:hover {
+  color: #1565c0;
+}
+
+/* Arrow button */
+.acct-arrow-btn {
+  background: none;
+  border: 1px solid #e0eaf4;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #6b7280;
+  flex-shrink: 0;
+  transition: background 0.2s, color 0.2s;
+}
+
+.acct-arrow-btn:hover {
+  background: #1565c0;
+  color: #fff;
+  border-color: #1565c0;
+}
+
+/* ── DICGC Banner ── */
+.acct-dicgc-banner {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dicgc-logo-block {
+  flex-shrink: 0;
+}
+
+.dicgc-text-block {
+  flex: 1;
+}
+
+.dicgc-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0d1b2a;
+  margin: 0 0 5px;
+}
+
+.dicgc-desc {
+  font-size: 12.5px;
+  color: #4b5563;
+  margin: 0 0 5px;
+  line-height: 1.5;
+}
+
+.dicgc-registered {
+  font-size: 12.5px;
+  color: #1a7a4a;
+  margin: 0 0 3px;
+}
+
+.dicgc-url {
+  font-size: 12px;
+  color: #1565c0;
+  text-decoration: none;
+}
+
+.dicgc-url:hover {
+  text-decoration: underline;
+}
+
+.dicgc-qr-block {
+  flex-shrink: 0;
+}
+
+/* ── RIGHT COLUMN ── */
+.acct-right-col {
+  position: sticky;
+  top: 20px;
+}
+
+/* Quick Links Card */
+.ql-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  overflow: hidden;
+}
+
+.ql-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0d1b2a;
+  padding: 18px 20px 12px;
+  margin: 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ql-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.ql-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border-bottom: 1px solid #f4f6f9;
+  transition: background 0.18s;
+}
+
+.ql-row:last-child {
+  border-bottom: none;
+}
+
+.ql-row:hover {
+  background: #f0f6ff;
+}
+
+.ql-icon {
+  color: #5b7fa6;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.ql-label {
+  flex: 1;
+  font-size: 13px;
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.ql-arrow {
+  color: #9badc8;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+
+.ql-row:hover .ql-arrow {
+  color: #1565c0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .acct-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .acct-right-col {
+    position: static;
+  }
+
+  .acct-page {
+    padding: 20px 16px 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .acct-card {
+    flex-wrap: wrap;
+  }
+
+  .acct-card-right {
+    align-items: flex-start;
+  }
+
+  .acct-dicgc-banner {
+    flex-direction: column;
+    text-align: center;
+  }
 }
